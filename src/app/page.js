@@ -25,6 +25,7 @@ export default function Home() {
                     <Link href="">Fitur</Link>
                     <Link href="">Harga</Link>
                     <Link href="">Blog</Link>
+                    <Link href="">kk</Link>
                 </div>
             </div>
         </nav>

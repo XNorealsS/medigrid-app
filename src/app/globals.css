@@ -124,9 +124,8 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-
-
 }
+
 .obat {
   position: absolute;
   width: 25em;
@@ -203,6 +202,7 @@
   left: 130px;
   top: -110px;
   text-align: left;
+  
 }
 
 .head-1 {

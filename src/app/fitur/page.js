@@ -1,11 +1,11 @@
 import Link from "next/link"
 
 
-const page2 = () => {
+const fitur = () => {
     return (
       <>
-      
+       
       </>
     )
 }
-export default page2
+export default fitur

@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color1: #fbbc5c;
+    --color2: #40c9b2;
+    --color3: #f9fbfa;
+    --color4: #a6e7dc;
+    --color5: #f6d5a1;
+    --color6: #ccf9f6;
+    --color7: #fbf0cd;
+    --color8: #e1fbfb;
+    --color9: #4fb99c;
+    --color10: #dcd4c4;
+  }
+
+*,body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: var(--color3);
+  }
+  
+  .first-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color2);
+    padding: 4px;
+    align-items: center;
+    color: var(--color6);
+  }
+  
+  .bahasa-faq {
+    display: flex;
+    gap: 29px;
+  }
+  .bahasa-faq a {
+    color: var(--color6);
+  }
+  
+  .contact1 a{
+    color: var(--color6);
+  }
+  
+  
+  
+  /* navbar 2 */
+  .second-nav {
+    background-color: var(--color3);
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.605);
+    position: sticky;
+    top: 0;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 23em;
+  }
+  
+  .navigation {
+    display: flex;
+    color: rgb(28, 27, 27);
+    z-index: 1;
+  }
+  
+  
+  .navigation .hove {
+    position: relative;
+    padding: 19px;
+  }
+  
+  .active {
+    color: var(--color2);
+  }
+  
+  .hove::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    border-radius: 25px 0px 25px 0px;
+    background-color: var(--color2);
+    transform: scaleX(0);
+    transition: transform .3s ease;
+  }
+  
+  .hove:hover {
+    color:  var(--color2);
+  }
+  
+  .hove:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .active {
+    color: var(--color2);
+    font-weight: bold;
+  }
+  
+  .active::after {
+    transform: scaleX(1);
+  }
+
+  .main {
+    background-color: var(--color3);
+  }
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .header {
+    margin: 23px;
+  }
+
+  .header h2 {
+    font-size: 30px;
+    margin: 22px;
+    }
+
+    .trans {
+        color: var(--color1);
+    }
+    
+    .klinik {
+        color: var(--color2);
+    }
+
+    .header p{
+        max-width: 680px;
+    }
+    .list-harga {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .card1 {
+        background-color: var(--color5);
+        width: 17%;
+        height: 270px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .card2 {
+        background-color: var(--color2);
+        width: 17%;
+        height: 270px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .bulan h3 {
+        font-size: 10px;
+    }
+
+    .bulan p {
+        color: var(--color2);
+        font-size: 10px;
+    }
+
+    .bulan span {
+        color: black;
+        font-size: 28px;
+    }
+
+
+    .bulan2 h3 {
+        font-size: 10px;
+    }
+
+    .bulan2 p {
+        color: var(--color2);
+        font-size: 10px;
+    }
+
+    .bulan2 span {
+        font-size: 28px;
+    }
+
+    .tahun {
+    color: var(--color3);
+
+    }
+
+    .tahun h3 {
+        font-size: 10px;
+    }
+
+    .tahun p {
+        color: var(--color3);
+        font-size: 10px;
+    }
+
+    .tahun span {
+        font-size: 28px;
+    }
+
+    .tahun2 h3 {
+        font-size: 10px;
+    }
+
+    .tahun2 p {
+        color: var(--color4);
+        font-size: 10px;
+    }
+
+    .tahun2 span {
+        font-size: 28px;
+    }
+
+    .garis1 {
+        background-color: var(--color2);
+        height: 2px;
+        width: 70%;
+    }
+    .garis2 {
+        background-color: var(--color4);
+        height: 2px;
+        width: 90%;
+    }
+
+    .fitur {
+        background-color: var(--color8);
+        width: 34%;
+        height: 240px;
+        border: 2px solid var(--color1);
+    }
+
+    .judul {
+        background-color: var(--color1);
+        height: 35px;
+        align-content: center;
+    }
+
+
+
+  

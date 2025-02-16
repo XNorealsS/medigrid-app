@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import '/src/app/globals.css'
 
 
 export default function Home() {
@@ -19,12 +20,12 @@ export default function Home() {
         <nav className="second-nav">
             <div className="navbar">
                 <div className="logo">
-                  <Link href=""><Image  src="/img/medigrid.jpg" alt="Logo" width={140} height={100} /></Link>
+                  <Link href="/"><Image  src="/img/medigrid.jpg" alt="Logo" width={140} height={100} /></Link>
                 </div>
                 <div className="navigation">
-                    <Link href="" className="hove active">Tentang Kami</Link>
+                    <Link href="/" className="hove active">Tentang Kami</Link>
                     <Link href="/fitur" className="hove">Fitur</Link>
-                    <Link href="" className="hove">Harga</Link>
+                    <Link href="/harga" className="hove">Harga</Link>
                     <Link href="" className="hove">Blog</Link>
                 </div>
             </div>

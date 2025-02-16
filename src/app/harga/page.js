@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import Footer from "../component/Footer";
 import '/src/app/harga.css'
 
 
 const harga = () => {
     return (
         <>
-    <section className="container">
         <nav className="first-nav">
             <div className="bahasa-faq">
                 <p>IND <span></span></p>
@@ -16,6 +16,7 @@ const harga = () => {
                 <Link href="">Contact Us</Link>
             </div>
         </nav>
+    <section className="container">
         <nav className="second-nav">
             <div className="navbar">
                 <div className="logo">
@@ -95,6 +96,9 @@ const harga = () => {
                 </div>
            </div>
     </section>
+
+
+<Footer/>
     </>
     )
 }

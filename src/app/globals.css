@@ -562,13 +562,12 @@ gap: 8em
 
 .footer-body{
   background-color: var(--color2);
-  height: 70vh;
+  height: 80vh;
   color: var(--color3);
 }
 
 .footer-body2 {
   background-color: var(--color1);
-  
   height: 5vh;
   position: absolute;
   width: 100%;
@@ -591,7 +590,7 @@ gap: 8em
 
 .media-sosial {
   margin-top: 23px;
-  margin-bottom: 23px;
+
 }
 
 .header-medsos {

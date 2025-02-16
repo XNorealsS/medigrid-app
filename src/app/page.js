@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function Home() {
   return(
     <>
@@ -18,14 +19,13 @@ export default function Home() {
         <nav className="second-nav">
             <div className="navbar">
                 <div className="logo">
-                  <Image src="/img/medigrid.jpg" alt="Logo" width={140} height={100} />
+                  <Link href=""><Image  src="/img/medigrid.jpg" alt="Logo" width={140} height={100} /></Link>
                 </div>
                 <div className="navigation">
-                    <Link href="">Tentang Kami</Link>
-                    <Link href="">Fitur</Link>
-                    <Link href="">Harga</Link>
-                    <Link href="">Blog</Link>
-                    <Link href="">kk</Link>
+                    <Link href="" className="hove active">Tentang Kami</Link>
+                    <Link href="/fitur" className="hove">Fitur</Link>
+                    <Link href="" className="hove">Harga</Link>
+                    <Link href="" className="hove">Blog</Link>
                 </div>
             </div>
         </nav>
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
             <div className="news-header">
                 <div className="sub-nama">
-                    <p className="beri"><div className="bulat"></div>Berita<div className="bulat"></div></p>
+                    <p className="beri"><span className="bulat"></span>Berita<span className="bulat"></span></p>
                     <h2>Info Terkini</h2>
                     <article className="ocehan">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda reprehenderit at deleniti, rem eaque eligendi fugit quaerat dignissimos ipsum ducimus facere voluptates laborum, repudiandae dicta expedita, labore libero consequuntur harum.</p>

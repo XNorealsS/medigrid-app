@@ -519,7 +519,6 @@
   } */
   
   
-<<<<<<<< HEAD:src/app/styles/home.module.css
   .footer-body{
     background-color: var(--color2);
     height: 80vh;
@@ -689,9 +688,3 @@
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
   }
-========
->>>>>>>> 33d7a70a2c353701ec5af91493ae358e8e6e56e8:src/app/style/home.css
-  
-  
-  
-  

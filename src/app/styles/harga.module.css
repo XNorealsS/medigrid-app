@@ -1,0 +1,406 @@
+
+/* Reset specific to this component */
+.container *, 
+.container *::before,
+.container *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout Components */
+.container {
+  background-color: var(--color-background);
+}
+
+/* Navigation */
+.first-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 4px;
+  color: var(--color-light-1);
+}
+
+.bahasa-faq {
+  display: flex;
+  gap: 29px;
+}
+
+.bahasa-faq a,
+.contact1 a {
+  color: var(--color-light-1);
+  text-decoration: none;
+}
+
+.second-nav {
+  background-color: var(--color-background);
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.605);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 23em;
+}
+
+.navigation {
+  display: flex;
+  color: rgb(28, 27, 27);
+  z-index: 1;
+}
+
+/* Navigation Hover Effects */
+.hove {
+  position: relative;
+  padding: 19px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hove::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  border-radius: 25px 0 25px 0;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.hove:hover {
+  color: var(--color-primary);
+}
+
+.hove:hover::after {
+  transform: scaleX(1);
+}
+
+.active {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.active::after {
+  transform: scaleX(1);
+}
+
+/* Main Content */
+.main {
+  background-color: var(--color-background);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.header {
+  margin: 23px;
+}
+
+.header h2 {
+  font-size: 30px;
+  margin: 22px;
+}
+
+.header p {
+  max-width: 680px;
+}
+
+/* Text Colors */
+.trans {
+  color: var(--color-secondary);
+}
+
+.klinik {
+  color: var(--color-primary);
+}
+
+/* Pricing Cards */
+.list-harga {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card1,
+.card2 {
+  width: 17%;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card1 {
+  background-color: var(--color-accent-2);
+}
+
+.card2 {
+  background-color: var(--color-primary);
+}
+
+/* Pricing Elements */
+.list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bulan,
+.bulan2,
+.tahun,
+.tahun2 {
+  text-align: center;
+}
+
+.bulan h3,
+.bulan2 h3,
+.tahun h3,
+.tahun2 h3 {
+  font-size: 10px;
+}
+
+.bulan p,
+.bulan2 p {
+  color: var(--color-primary);
+  font-size: 10px;
+}
+
+.tahun p {
+  color: var(--color-background);
+  font-size: 10px;
+}
+
+.tahun2 p {
+  color: var(--color-accent-1);
+  font-size: 10px;
+}
+
+.bulan span,
+.bulan2 span,
+.tahun span,
+.tahun2 span {
+  font-size: 28px;
+}
+
+/* Dividers */
+.garis1,
+.garis2 {
+  height: 2px;
+  width: 70%;
+}
+
+.garis1 {
+  background-color: var(--color-primary);
+}
+
+.garis2 {
+  background-color: var(--color-accent-1);
+  width: 90%;
+}
+
+/* Feature Box */
+.fitur {
+  background-color: var(--color-light-3);
+  width: 34%;
+  height: 240px;
+  border: 2px solid var(--color-secondary);
+}
+
+.judul {
+  background-color: var(--color-secondary);
+  height: 35px;
+}
+
+/* Button styles */
+.btn {
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-dark-1);
+}
+
+/* Footer */
+.footer-body{
+  background-color: var(--color2);
+  height: 80vh;
+  color: var(--color3);
+}
+
+.footer-body2 {
+  background-color: var(--color1);
+  height: 5vh;
+  position: absolute;
+  width: 100%;
+  display: flex;
+}
+
+
+.alamat-logo {
+  position: relative;
+  width: 30%;
+  top: 100%;
+  padding: 43px;
+}
+
+.image-logo img {
+  width: 320px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+/* Social Media */
+.media-sosial {
+  margin-top: 13px;
+}
+
+.header-medsos {
+  font-size: 20px;
+}
+
+.medlog {
+  display: flex;
+  gap: 7px;
+  padding: 5px;
+}
+
+.medsos-logo {
+  border-radius: 100%;
+  background-color: var(--color-background);
+  padding: 2px;
+}
+
+.medsos-logo i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  color: var(--color-dark-1);
+}
+
+.medsos-logo i:hover {
+  color: var(--color-accent-1);
+}
+
+.medsos-logo:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+/* Contact Section */
+.hubungi {
+  font-size: 20px;
+  margin-top: 9px;
+}
+
+.kami {
+  display: flex;
+  flex-direction: column;
+  margin-top: 9px;
+  gap: 7px;
+}
+
+.kami a,
+.kami i {
+  color: var(--color-background);
+  text-decoration: none;
+}
+
+.kami a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Info Section */
+.info-layan-bis-lain {
+  position: relative;
+  top: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #49c5b6;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.top-sections {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-section {
+  margin-right: 20px;
+}
+
+.head-info h3 {
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom: 2px solid #fbd699;
+}
+
+.list-info {
+  margin-top: 10px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  margin: 5px 0;
+}
+
+.list a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.bottom-section {
+  margin-top: 20px;
+}
+
+/* Footer Menu */
+.menu-footer {
+  position: absolute;
+  top: 290%;
+  right: 0;
+  background-color: var(--color-secondary);
+  width: 4%;
+  height: 280px;
+}
+
+.list-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 14px;
+  font-size: 36px;
+  flex-direction: column;
+}
+
+.list-menu a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}

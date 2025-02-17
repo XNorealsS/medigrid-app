@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "../component/Footer";
-import '/src/app/harga.css'
+
+import '../style/harga.css'
 
 
 const harga = () => {
@@ -96,9 +97,7 @@ const harga = () => {
                 </div>
            </div>
     </section>
-
-
-<Footer/>
+    <Footer></Footer>
     </>
     )
 }

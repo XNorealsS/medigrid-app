@@ -52,6 +52,7 @@
   .second-nav {
     background-color: var(--color3);
     box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.605);   
+    
 
   }
 
@@ -111,6 +112,7 @@
 
   .main {
     background-color: var(--color3);
+    height: 200vh;
   }
 
   .head {
@@ -256,174 +258,178 @@
         align-content: center;
     }
 
-    .footer-body{
-        background-color: var(--color2);
-        height: 80vh;
-        color: var(--color3);
-      }
-      
-      .footer-body2 {
-        background-color: var(--color1);
-        height: 5vh;
-        position: absolute;
-        width: 100%;
-        display: flex;
-      }
-      
-      .alamat-logo {
-        position: relative;
-        width: 30%;
-        top: 100%;
-        padding: 43px;
-      
-      }
-      
-      .image-logo img{
-        width: 320px;
-        height: 120px;
-        border-radius: 10px;
-      }
-      
-      .media-sosial {
-        margin-top: 13px;
-      
-      }
-      
-      .header-medsos {
-        font-size: 20px;
-      }
-      
-      .medlog {
-        display: flex;
-        gap: 7px;
-        padding: 5px;
-      
-      }
-      
-      .medsos-logo{
-        border-radius: 100%;
-        background-color: var(--color3);
-        padding: 2px;
-      
-      }
-      .medsos-logo i{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 21px;
-        color: var(--color9);
-      }
-      
-      .medsos-logo i:hover{
-        color: var(--color4);
-      }
-      
-      .medsos-logo:hover {
-        transition:all 0.3s;
-        transform: scale(1.1);
-      }
-      
-      .hubungi {
-        font-size: 20px;
-        margin-top: 9px;
-      
-      }
-      
-      .kami {
-        display: flex;
-        flex-direction: column;
-        margin-top: 9px;
-        gap: 7px;
-      }
-      
-      .kami a,i{
-        color: var(--color3);
-      }
-      
-      .kami a:hover{
-        transform: scale(1.1);
-        transition: all 0.3s ease;
-      }
-      
-      
-      .info-layan-bis-lain {
-        position: relative;
-        top: 100%;
-        padding: 43px;
-        display: flex;
-       
-      }
-      
-      .info-layan-bis-lain {
-        display: flex;
-        flex-direction: column;
-        background-color: #49c5b6;
-        padding: 20px;
-        color: white;
-        font-family: Arial, sans-serif;
-      }
-      
-      .top-sections {
-        display: flex;
-        justify-content: space-between;
-      }
-      
-      .info-section {
-        margin-right: 20px;
-      }
-      
-      .head-info h3 {
-        font-size: 25px;
-        font-weight: bold;
-        border-bottom: 2px solid #fbd699;
-      
-      }
-      
-      .list-info {
-        margin-top: 10px;
-      }
-      
-      .list {
-        list-style: none;
-        padding: 0;
-      }
-      
-      .list li {
-        margin: 5px 0;
-      }
-      
-      .list a {
-        text-decoration: none;
-        color: white;
-        font-size: 14px;
-      }
-      
-      .bottom-section {
-        margin-top: 20px;
-      }
-      
-      .menu-footer {
-        position: absolute;
-        top: 290%;
-        right: 0;
-        background-color: var(--color1);
-        width: 4%;
-        height: 280px;
-      }
-      
-      .list-menu {
-        display: flex;
-         align-items: center;
-         justify-content: center;
-         gap: 13px;
-        margin-top: 14px;
-        font-size: 36px;
-        flex-direction: column;
-      }
-      .list-menu a:hover{
-        transform: scale(1.1);
-        transition: all 0.3s ease-in-out;
-      }
+    
+    /* .footer-body{
+      background-color: var(--color2);
+      height: 90vh;
+      color: var(--color3);
+    }
+    
+    .footer-body2 {
+      background-color: var(--color1);
+      height: 5vh;
+      position: absolute;
+      width: 100%;
+      display: flex;
+    }
+    
+    .alamat-logo {
+      position: relative;
+      width: 30%;
+      top: 100%;
+      padding: 43px;
+    
+    }
+    
+    .image-logo img{
+      width: 320px;
+      height: 120px;
+      border-radius: 10px;
+    }
+    
+    .media-sosial {
+      margin-top: 13px;
+    
+    }
+    
+    .header-medsos {
+      font-size: 20px;
+    }
+    
+    .medlog {
+      display: flex;
+      gap: 7px;
+      padding: 5px;
+    
+    }
+    
+    .medsos-logo{
+      border-radius: 100%;
+      background-color: var(--color3);
+      padding: 2px;
+    
+    }
+    .medsos-logo i{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 21px;
+      color: var(--color9);
+    }
+    
+    .medsos-logo i:hover{
+      color: var(--color4);
+    }
+    
+    .medsos-logo:hover {
+      transition:all 0.3s;
+      transform: scale(1.1);
+    }
+    
+    .hubungi {
+      font-size: 20px;
+      margin-top: 9px;
+    
+    }
+    
+    .kami {
+      display: flex;
+      flex-direction: column;
+      margin-top: 9px;
+      gap: 7px;
+    }
+    
+    .kami a,i{
+      color: var(--color3);
+    }
+    
+    .kami a:hover{
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+    }
+    
+    
+    .info-layan-bis-lain {
+      position: relative;
+      top: 100%;
+      padding: 43px;
+      display: flex;
+     
+    }
+    
+    .info-layan-bis-lain {
+      display: flex;
+      flex-direction: column;
+      background-color: #49c5b6;
+      padding: 20px;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    
+    .top-sections {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .info-section {
+      margin-right: 20px;
+    }
+  
+    .head-info h3 {
+      font-size: 25px;
+      font-weight: bold;
+      border-bottom: 2px solid #fbd699;
+    
+    }
+    
+    .list-info {
+      margin-top: 10px;
+    }
+    
+    .list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .list li {
+      margin: 1px 0;
+    }
+    
+    .list a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+    }
+    
+    .bottom-section {
+      margin-top: 20px;
+    }
+    
+    .menu-footer {
+      position: absolute;
+      top: 290%;
+      right: 0;
+      background-color: var(--color1);
+      width: 4%;
+      height: 280px;
+    }
+    
+    .list-menu {
+      display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 13px;
+      margin-top: 14px;
+      font-size: 36px;
+      flex-direction: column;
+    }
+    .list-menu a:hover{
+      transform: scale(1.1);
+      transition: all 0.3s ease-in-out;
+    } */
+    
+
+    
       
       
       

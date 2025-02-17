@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-
 import "boxicons/css/boxicons.min.css"
 
 const geistSans = Geist({

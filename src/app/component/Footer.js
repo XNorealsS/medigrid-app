@@ -3,14 +3,13 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Link from "next/link";
 import Image from 'next/image';
+import '../style/component.css'
 
 export class Footer extends Component {
   static propTypes = {}
 
   render() {
     return (
-
-
         <footer className="footer-body">
         <div className="footer-body2">
             <div className="alamat-logo">
@@ -115,7 +114,6 @@ export class Footer extends Component {
                     </div>
             </div>
     </footer>
-
 
     )
   }

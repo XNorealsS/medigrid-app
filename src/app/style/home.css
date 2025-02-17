@@ -26,6 +26,7 @@
     position: sticky;
     top: 0;
     z-index: 99;
+
   }
   
   .first-nav {
@@ -296,8 +297,9 @@
   
   .news-header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: auto;
+    gap: 160px;
   }
   
   .beri {
@@ -359,7 +361,7 @@
   }
   
   /* Individual Card Styles */
-  .card {
+  .card1 {
     background-color: #fff;
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
@@ -423,75 +425,66 @@
   /* testimoni */
   
   .testimoni {
+    position: relative;
     background-color: var(--color3);
-    height: 100vh;
-    text-align: center;
+    height: 80vh;
   }   
   
-  .testi {
-    display: flex;
-    justify-content: center;
-  
+  .header-testi {
+    text-align: center;
+    padding: 90px;
   }
-  
+
+  .back {
+    display: flex;
+  }
+
   .gambar {
-   position: absolute;
-    top: 250%;
-    left: 46%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-40%);
   }
   
-  .testimoni-wrapper {
-    position: relative;
-    z-index: 1; /* di atas shape */
+.testimoni-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.testi-card1 {
+  position: relative;
+  left: 48px;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-top: 50px;
-    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    gap: 23px;
+    max-width: 500px;
+    text-align: right;
+}
+
+.testi-card1 .image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.testi-card1 .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
   
-  }
-  
-  /* KARTU TESTIMONI */
-  .testi-card1 {
+   .testi-card2 {
     position: relative;
-    top: 140px;
+    top: 180%;
+    left: 10%;
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
       gap: 23px;
       max-width: 500px;
-    width: auto;
-    margin: 20px;
-    padding: 20px;
-    text-align: right;
-  }
-  
-  /* FOTO / IMAGE DALAM KARTU 1*/
-  .testi-card1 .image {
-    width: 140px;
-    height: 100px;
-    margin: 0 auto 15px auto;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  
-  .testi-card1 .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  
-  /* FOTO / IMAGE DALAM KARTU 2*/
-  .testi-card2 {
-    position: relative;
-    top: 440px;
-      display: flex;
-      gap: 14px;
-      max-width: 500px;
-    width: auto;
-    margin: 20px;
-    padding: 20px;
-    text-align: left;
+      text-align: left;
   }
   
   .testi-card2 .image {
@@ -507,23 +500,17 @@
     height: 100%;
     object-fit: cover;
   }
-  
-  
-  
-  /* FOTO / IMAGE DALAM KARTU 3 */
+
   .testi-card3 {
     position: relative;
-    top: 200px;
-    right: 80px;
+    top: 60%;
+    right: 105px;
       display: flex;
+      flex-direction: row;
       gap: 23px;
       max-width: 500px;
-      width: auto;
-      margin: 20px;
-      padding: 20px;
       text-align: left;
   }
-  
   
   .testi-card3 .image {
     width: 100px;
@@ -538,11 +525,9 @@
     height: 100%;
     object-fit: cover;
   }
-  
-  
-  
-  /* TEKS DALAM KARTU */
-  .testi-text h4 {
+
+
+  /* .testi-text h4 {
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 600;
@@ -552,178 +537,10 @@
     font-size: 14px;
     line-height: 1.5;
     color: #333;
-    font-style: italic; /* opsional jika ingin bergaya kutipan */
-  }
+    font-style: italic; 
+  } */
   
   
-  .footer-body{
-    background-color: var(--color2);
-    height: 80vh;
-    color: var(--color3);
-  }
-  
-  .footer-body2 {
-    background-color: var(--color1);
-    height: 5vh;
-    position: absolute;
-    width: 100%;
-    display: flex;
-  }
-  
-  .alamat-logo {
-    position: relative;
-    width: 30%;
-    top: 100%;
-    padding: 43px;
-  
-  }
-  
-  .image-logo img{
-    width: 320px;
-    height: 120px;
-    border-radius: 10px;
-  }
-  
-  .media-sosial {
-    margin-top: 13px;
-  
-  }
-  
-  .header-medsos {
-    font-size: 20px;
-  }
-  
-  .medlog {
-    display: flex;
-    gap: 7px;
-    padding: 5px;
-  
-  }
-  
-  .medsos-logo{
-    border-radius: 100%;
-    background-color: var(--color3);
-    padding: 2px;
-  
-  }
-  .medsos-logo i{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 21px;
-    color: var(--color9);
-  }
-  
-  .medsos-logo i:hover{
-    color: var(--color4);
-  }
-  
-  .medsos-logo:hover {
-    transition:all 0.3s;
-    transform: scale(1.1);
-  }
-  
-  .hubungi {
-    font-size: 20px;
-    margin-top: 9px;
-  
-  }
-  
-  .kami {
-    display: flex;
-    flex-direction: column;
-    margin-top: 9px;
-    gap: 7px;
-  }
-  
-  .kami a,i{
-    color: var(--color3);
-  }
-  
-  .kami a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-  }
-  
-  
-  .info-layan-bis-lain {
-    position: relative;
-    top: 100%;
-    padding: 43px;
-    display: flex;
-   
-  }
-  
-  .info-layan-bis-lain {
-    display: flex;
-    flex-direction: column;
-    background-color: #49c5b6;
-    padding: 20px;
-    color: white;
-    font-family: Arial, sans-serif;
-  }
-  
-  .top-sections {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .info-section {
-    margin-right: 20px;
-  }
-  
-  .head-info h3 {
-    font-size: 25px;
-    font-weight: bold;
-    border-bottom: 2px solid #fbd699;
-  
-  }
-  
-  .list-info {
-    margin-top: 10px;
-  }
-  
-  .list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .list li {
-    margin: 5px 0;
-  }
-  
-  .list a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-  }
-  
-  .bottom-section {
-    margin-top: 20px;
-  }
-  
-  .menu-footer {
-    position: absolute;
-    top: 290%;
-    right: 0;
-    background-color: var(--color1);
-    width: 4%;
-    height: 280px;
-  }
-  
-  .list-menu {
-    display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 13px;
-    margin-top: 14px;
-    font-size: 36px;
-    flex-direction: column;
-  }
-  .list-menu a:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
-  }
   
   
   

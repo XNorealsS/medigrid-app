@@ -1,0 +1,92 @@
+.container *, 
+.container *::before,
+.container *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout Components */
+.container {
+  background-color: var(--color-background);
+  position: sticky;
+  top: 0;
+}
+
+/* Navigation */
+.first-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 4px;
+  color: var(--color-light-1);
+}
+
+.bahasa-faq {
+  display: flex;
+  gap: 29px;
+}
+
+.bahasa-faq a,
+.contact1 a {
+  color: var(--color-light-1);
+  text-decoration: none;
+}
+
+.second-nav {
+  background-color: var(--color-background);
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.605);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-right: 23em;
+}
+
+.navigation {
+  display: flex;
+  color: rgb(28, 27, 27);
+  z-index: 1;
+}
+
+
+/* Navigation Hover Effects */
+.hove {
+  position: relative;
+  padding: 19px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hove::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  border-radius: 25px 0 25px 0;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.hove:hover {
+  color: var(--color-primary);
+}
+
+.hove:hover::after {
+  transform: scaleX(1);
+}
+
+.active {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.active::after {
+  transform: scaleX(1);
+}

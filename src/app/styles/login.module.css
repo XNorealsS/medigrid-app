@@ -1,0 +1,132 @@
+.container {
+    background-color: var(--color3);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+  }
+  
+  .first-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color2);
+    padding: 4px;
+    align-items: center;
+    color: var(--color6);
+  }
+  
+  .bahasa-faq {
+    display: flex;
+    gap: 29px;
+  }
+  .bahasa-faq a {
+    color: var(--color6);
+  }
+  
+  .contact1 a{
+    color: var(--color6);
+  }
+  
+  
+  
+  /* navbar 2 */
+  .second-nav {
+    background-color: var(--color3);
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.605);
+  
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 23em;
+  }
+  
+  .navigation {
+    display: flex;
+    color: rgb(28, 27, 27);
+    z-index: 1;
+  }
+  
+  
+  .navigation .hove {
+    position: relative;
+    padding: 19px;
+  }
+  
+  .active {
+    color: var(--color2);
+  }
+  
+  .hove::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    border-radius: 25px 0px 25px 0px;
+    background-color: var(--color2);
+    transform: scaleX(0);
+    transition: transform .3s ease;
+  }
+  
+  .hove:hover {
+    color:  var(--color2);
+  }
+  
+  .hove:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .active {
+    color: var(--color2);
+    font-weight: bold;
+  }
+  
+  .active::after {
+    transform: scaleX(1);
+  }
+
+  .main {
+    background-color: var(--color6);
+    height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    margin-bottom: 140px;
+  }
+
+  .login-box {
+    background-color: var(--color3);
+    width: 30%;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    text-align: center;
+    padding: 23px;
+    font-size: 1.5rem;
+  }
+
+  .google-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    width: 300px;
+    gap: 5px;
+    background-color: var(--color6);
+  }
+
+  

@@ -1,0 +1,97 @@
+/* styles/dashboard.module.css */
+
+.dashboardSidebar {
+    transition: all 0.3s ease;
+    height: calc(100vh - 4rem); /* Adjusts for the navbar height */
+    overflow-y: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboardSidebar {
+      position: fixed;
+      top: 4rem;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 250px;
+      z-index: 50;
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  /* Add scroll behavior for the sidebar */
+  .dashboardSidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .dashboardSidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .dashboardSidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 4px;
+  }
+  
+  .dashboardSidebar::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+  }
+  
+  /* Styles for the form elements */
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  .formInput:focus {
+    border-color: #667eea;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
+  }
+  
+  .formButton {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #5a67d8;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out;
+  }
+  
+  .formButton:hover {
+    background-color: #4c51bf;
+  }
+  
+  .fileUploadContainer {
+    border: 2px dashed #e2e8f0;
+    border-radius: 0.25rem;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out;
+  }
+  
+  .fileUploadContainer:hover {
+    border-color: #cbd5e0;
+  }
+  
+  .fileUploadInput {
+    display: none;
+  }

@@ -6,9 +6,6 @@ import stylesx from "../styles/footer.module.css";
 
 function footer() {
   return (
-  
-
-
     <footer className={stylesx['footer-body']}>
         <div className={stylesx['footer-body2']}>
             <div className={stylesx['alamat-logo']}>

@@ -11,6 +11,8 @@
 /* Layout Components */
 .container {
   background-color: var(--color-background);
+  position: sticky;
+  top: 0;
 }
 
 /* Navigation */
@@ -52,6 +54,7 @@
   z-index: 1;
 }
 
+
 /* Navigation Hover Effects */
 .hove {
   position: relative;
@@ -90,9 +93,12 @@
   transform: scaleX(1);
 }
 
+
+
 /* Main Content */
 .main {
-  background-color: var(--color-background);
+  background-color: var(--color3);
+  height: 170vh;
 }
 
 .head {
@@ -108,6 +114,12 @@
   margin: 23px;
 }
 
+.header h1{
+  margin-top: 50px ;
+  font-size: 25px;
+  font-weight: bold;
+}
+
 .header h2 {
   font-size: 30px;
   margin: 22px;
@@ -115,15 +127,23 @@
 
 .header p {
   max-width: 680px;
+  font-weight: 600;
+  font-size: large;
 }
 
 /* Text Colors */
 .trans {
   color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.apk {
+  font-weight: 700;
 }
 
 .klinik {
   color: var(--color-primary);
+  font-weight: 700;
 }
 
 /* Pricing Cards */
@@ -131,6 +151,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  gap: 12px;
 }
 
 .card1,
@@ -143,11 +164,13 @@
 }
 
 .card1 {
-  background-color: var(--color-accent-2);
+  background-color: var(--color-primary);
+  border-radius: 7px 7px 0px 0px;
 }
 
 .card2 {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent-2);
+  border-radius: 7px 7px 0px 0px;
 }
 
 /* Pricing Elements */
@@ -169,12 +192,14 @@
 .bulan2 h3,
 .tahun h3,
 .tahun2 h3 {
-  font-size: 10px;
+  color: var(--color3);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .bulan p,
 .bulan2 p {
-  color: var(--color-primary);
+  color: var(--color3);
   font-size: 10px;
 }
 
@@ -207,21 +232,8 @@
 }
 
 .garis2 {
-  background-color: var(--color-accent-1);
+  background-color: var(--color6);
   width: 90%;
-}
-
-/* Feature Box */
-.fitur {
-  background-color: var(--color-light-3);
-  width: 34%;
-  height: 240px;
-  border: 2px solid var(--color-secondary);
-}
-
-.judul {
-  background-color: var(--color-secondary);
-  height: 35px;
 }
 
 /* Button styles */
@@ -238,6 +250,31 @@
 .btn:hover {
   background-color: var(--color-dark-1);
 }
+
+.list-fitur {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 11px;
+}
+
+.fitur-card {
+  border: 2px solid var(--color1);
+  height: 290px;
+  width: 17%;
+}
+
+
+.judul {
+  background-color: var(--color1);
+  height: 35px;
+}
+
+.judul h1 {
+  font-weight: bold;
+  color: var(--color3);
+}
+
 
 /* Footer */
 .footer-body{

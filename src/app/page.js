@@ -24,9 +24,9 @@ export default function Home() {
                 </div>
                 <div className={styles['navigation']}>
                     <Link href="/" className={`${styles['hove']} ${styles['active']}`}>Tentang Kami</Link>
-                    <Link href="/fitur" className={styles['hove']}>Fitur</Link>
+                    <Link href="/fitur" className={styles['hove']}>Fitur & Layanan</Link>
                     <Link href="/harga" className={styles['hove']}>Harga</Link>
-                    <Link href="" className={styles['hove']}>Blog</Link>
+                    <Link href="/blog" className={styles['hove']}>Blog</Link>
                 </div>
             </div>
         </nav>
@@ -74,15 +74,15 @@ export default function Home() {
                     </article>
                 </div>
                 <div className={styles['all-news']}>
-                    <Link href="">All News</Link>
+                    <Link href="/blog">All News</Link>
                 </div>
             </div>
         </header>
 
         <div className={styles['card-berita']}>
             <div className={styles['card-group']}>
-                <div className={styles['card']}>
-             <Image src="/img/satusehat.png" alt="Logo" width={400} height={100} />
+                <div className={styles['card1']}>
+                    <Image src="/img/satusehat.png" alt="Logo" width={400} height={100} />
                     <div className={styles['card-body']}>
                         <h6>
                             <span>indodev</span>
@@ -96,7 +96,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className={styles['card']}>
+                <div className={styles['card1']}>
              <Image src="/img/bpjs.png" alt="Logo" width={400} height={100} />
                   
                     <div className={styles['card-body']}>
@@ -111,7 +111,7 @@ export default function Home() {
                         <small className={styles['text-muted']}>Last updated 5 mins ago</small>
                     </div>
                 </div>
-                <div className={styles['card']}>
+                <div className={styles['card1']}>
              <Image src="/img/pse.png" alt="Logo" width={400} height={100} />
                     <div className={styles['card-body']}>
                         <h6>

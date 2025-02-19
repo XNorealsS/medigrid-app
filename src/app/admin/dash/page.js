@@ -97,12 +97,12 @@ export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("upload");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    if (status === "loading") return;
-    if (!session) {
-      router.push("/v1/login");
-    }
-  }, [session, status, router]);
+  // useEffect(() => {
+  //   if (status === "loading") return;
+  //   if (!session) {
+  //     router.push("/v1/login");
+  //   }
+  // }, [session, status, router]);
 
   if (status === "loading" || !session) {
     return (

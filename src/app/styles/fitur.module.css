@@ -90,3 +90,80 @@
 .active::after {
   transform: scaleX(1);
 }
+
+
+.main {
+  background-color: var(--color3);
+  height: 100vh;
+}
+
+.content {
+  background-color: var(--color3) ;
+  height: 87vh;
+  align-content: center;
+}
+
+.side {
+  max-width: 800px;
+  padding: 44px;
+}
+
+.header {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+.teks {
+  margin-top: 23px;
+  margin-bottom: 23px;
+}
+
+.button{
+  background-color: var(--color9);
+  border-radius: 5px;
+  padding: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--color2);
+}
+
+
+.layanan {
+  background-color: var(--color3);
+  height: 80vh;
+}
+
+.header-layan {
+  background-color: var(--color2);
+  text-align: center;
+  padding: 40px;
+}
+
+.layanan-isi {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.layanan-1{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  max-width: 300px;
+  margin-top: 53px;
+}
+
+.layanan-1 h2 {
+  font-weight: bold;
+  margin: 10px
+}
+
+.logo{
+  background-color: var(--color2);
+  padding: 5px;
+  border-radius: 72px;
+}

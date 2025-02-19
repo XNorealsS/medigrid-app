@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FiUpload, FiFileText, FiDatabase, FiUsers, FiSettings, FiLogOut, FiMenu, FiX } from "react-icons/fi";
 import styles from '@/app/styles/dashboard.module.css';
+import Link from "next/link";
+
 
 export default function Dashboard() {
   useEffect(() => {
@@ -72,6 +74,7 @@ export default function Dashboard() {
       .relative { position: relative; }
       .fixed { position: fixed; }
       .inset-y-0 { top: 0px; bottom: 0px; }
+      .inset-y-1 { top: 400px; }
       .left-0 { left: 0px; }
       .z-10 { z-index: 10; }
       .border { border-width: 1px; }
@@ -186,7 +189,7 @@ export default function Dashboard() {
           <div className="flex items-center ml-4 md:ml-0">
             {/* Logo */}
            
-        <Image src="/img/medigrid.jpg" alt="Logo" width={100} height={100}></Image>
+            <Image src="/img/medigrid.jpg" alt="Logo" width={100} height={100}></Image>
             
             <div className="flex flex-col">
               <h1 className="text-xl font-semibold text-secondary">Dashboard</h1>
@@ -213,7 +216,7 @@ export default function Dashboard() {
           mobileMenuOpen ? "block" : "hidden"
         } md:block w-64 bg-accent-light shadow-md z-10 md:relative fixed inset-y-0 left-0 ${styles.dashboardSidebar}`}>
           <div className="h-full px-3 py-4 overflow-y-auto">
-            <nav className="space-y-1">
+            <nav className="space1-y-1">
               <button
                 onClick={() => handleTabChange("upload")}
                 className={`flex items-center px-3 py-2 text-sm font-medium rounded-md w-full transition ${
@@ -223,7 +226,7 @@ export default function Dashboard() {
                 }`}
               >
                 <FiUpload className="mr-3 h-5 w-5" />
-                Upload Data
+                Upload Profile Perusahaan
               </button>
               <button
                 onClick={() => handleTabChange("forms")}
@@ -234,7 +237,7 @@ export default function Dashboard() {
                 }`}
               >
                 <FiFileText className="mr-3 h-5 w-5" />
-                Input Forms
+                Upload Berita 
               </button>
               <button
                 onClick={() => handleTabChange("data")}
@@ -245,23 +248,12 @@ export default function Dashboard() {
                 }`}
               >
                 <FiDatabase className="mr-3 h-5 w-5" />
-                View Data
+                Dynamic Element
               </button>
               <button
                 onClick={() => handleTabChange("users")}
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-md w-full transition ${
+                className={`flex items-center  px-3 py-2 text-sm font-medium rounded-md w-full transition ${
                   activeTab === "users"
-                    ? "bg-accent text-primary"
-                    : "text-dark hover:bg-accent-hover"
-                }`}
-              >
-                <FiUsers className="mr-3 h-5 w-5" />
-                Users
-              </button>
-              <button
-                onClick={() => handleTabChange("settings")}
-                className={`flex items-center px-3 py-2 text-sm font-medium rounded-md w-full transition ${
-                  activeTab === "settings"
                     ? "bg-accent text-primary"
                     : "text-dark hover:bg-accent-hover"
                 }`}
@@ -270,6 +262,13 @@ export default function Dashboard() {
                 Settings
               </button>
             </nav>
+            <Link href='/'
+                className={`flex inset-y-1 items-center relative space-y-6 px-3 py-2 text-sm font-medium rounded-md w-full transition ${
+                  activeTab === "forms"
+                    ? "bg-accent text-primary"
+                    : "text-dark hover:bg-accent-hover"
+                }`}>
+                Back</Link>
           </div>
         </aside>
 

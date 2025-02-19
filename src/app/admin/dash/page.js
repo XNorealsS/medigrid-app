@@ -104,16 +104,16 @@ export default function Dashboard() {
   //   }
   // }, [session, status, router]);
 
-  if (status === "loading" || !session) {
-    return (
-      <div className="min-h-screen bg-light flex items-center justify-center">
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <div className="w-12 h-12 border-t-4 border-primary border-solid rounded-md animate-spin mx-auto"></div>
-          <p className="mt-4 text-center text-dark">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  // if (status === "loading" || !session) {
+  //   return (
+  //     <div className="min-h-screen bg-light flex items-center justify-center">
+  //       <div className="p-6 bg-white rounded-lg shadow-md">
+  //         <div className="w-12 h-12 border-t-4 border-primary border-solid rounded-md animate-spin mx-auto"></div>
+  //         <p className="mt-4 text-center text-dark">Loading...</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -194,7 +194,7 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="flex items-center">
-          <span className="text-dark mr-4">{session.user?.name || "User"}</span>
+          {/* <span className="text-dark mr-4">{session.user?.name || "User"}</span> */}
           <button
             onClick={() => signOut()}
             className="inline-flex items-center px-3 py-1 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary-dark transition"

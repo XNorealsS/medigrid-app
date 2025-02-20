@@ -22,14 +22,14 @@ const blog = () => {
                 <div className={stylesh['logo']}>
                   <Link href="/"><Image src="/img/medigrid.jpg" alt="Logo" width={140} height={100} /></Link>
                 </div>
-                <div className={stylesh['search']}>
-                    <input type='text' placeholder='Search'></input>
-                </div>
                 <div className={stylesh['navigation']}>
                     <Link href="/" className={stylesh['hove']}>Tentang Kami</Link>
                     <Link href="/fitur" className={stylesh['hove']}>Fitur & Layanan</Link>
                     <Link href="/harga" className={stylesh['hove']}>Harga</Link>
                     <Link href="" className={`${stylesh['hove']} ${stylesh['active']}`}>Blog</Link>
+                </div>
+                <div className={stylesh['search']}>
+                    <input type='text' placeholder='Search'></input>
                 </div>
             </div>
         </nav>

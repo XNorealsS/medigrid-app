@@ -2,8 +2,8 @@ import "../app/styles/globals.css";
 import AuthProvider from "../app/components/SessionProvider";
 
 export const metadata = {
-  title: "Login App",
-  description: "Login with Google using NextAuth",
+  title: "Medigrid App",
+  description: "Great Medical for you",
 };
 
 export default function RootLayout({ children }) {

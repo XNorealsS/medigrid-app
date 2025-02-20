@@ -101,6 +101,11 @@
   overflow: hidden;
 }
 
+.imag {
+  position: absolute;
+  right: 0;
+}
+
 .obat {
   position: absolute;
   width: 25em;
@@ -426,6 +431,7 @@ gap: 8em
 .header-testi {
   text-align: center;
   padding: 90px;
+  font-size: 1.4rem;
 }
 
 .back {
@@ -496,7 +502,7 @@ object-fit: cover;
 
 .testi-card3 {
   position: relative;
-  top: 60%;
+  top: 20%;
   right: 105px;
     display: flex;
     flex-direction: row;

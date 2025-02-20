@@ -97,6 +97,11 @@ export default function Home() {
       </section>
       <section className={styles["berita"]}>
         <header className={styles["news-head"]}>
+          <div className={styles['imag']}>
+        <Image src='/img/vector1.png' 
+        alt="logo"
+        width={100} height={100}></Image>
+        </div>
           <div className={styles["hiasan"]}></div>
           <div className={styles["news-header"]}>
             <div className={styles["sub-nama"]}>
@@ -119,7 +124,6 @@ export default function Home() {
             </div>
           </div>
         </header>
-
         <div className={styles["card-berita"]}>
           <div className={styles["card-group"]}>
             <div className={styles["card1"]}>

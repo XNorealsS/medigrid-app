@@ -4,7 +4,11 @@ import Link from "next/link";
 import stylesh from '../styles/blog.module.css';
 import Footer from "../components/footer"; 
 
+
+
+
 const blog = () => {
+
   return (
     <>
      <nav className={stylesh["first-nav"]}>
@@ -160,8 +164,8 @@ const blog = () => {
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
+            </div>
 
-        </div>
             <div className={stylesh['button']}>
                 <button className={stylesh['btn']}>Prev</button>
                 <button className={stylesh['btn']}>1</button>

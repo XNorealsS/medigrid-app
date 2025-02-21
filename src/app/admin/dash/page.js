@@ -42,6 +42,7 @@ export default function Dashboard() {
       .h-5 { height: 1.25rem; }
       .h-12 { height: 3rem; }
       .h-16 { height: 4rem; }
+      .h-100 {height: 70vh;}
       .w-5 { width: 1.25rem; }
       .w-12 { width: 3rem; }
       .w-64 { width: 16rem; }
@@ -64,6 +65,7 @@ export default function Dashboard() {
       .mr-2 { margin-right: 0.5rem; }
       .mr-3 { margin-right: 0.75rem; }
       .mr-4 { margin-right: 1rem; }
+      .mr-5 { margin-right: 4rem; }
       .ml-4 { margin-left: 1rem; }
       .mb-6 { margin-bottom: 1.5rem; }
       .text-sm { font-size: 0.875rem; }
@@ -77,7 +79,7 @@ export default function Dashboard() {
       .inset-y-1 { top: 400px; }
       .left-0 { left: 0px; }
       .z-10 { z-index: 10; }
-      .border { border-width: 1px; }
+      .border { border-width: 2px; }
       .border-t-4 { border-top-width: 4px; }
       .border-transparent { border-color: transparent; }
       .transition { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
@@ -282,22 +284,23 @@ export default function Dashboard() {
               </div>
             )}
 
+            {/* input data berita */}
             {activeTab === "forms" && (
-              <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-primary">
-                <h2 className="text-lg font-semibold text-secondary mb-6">Input Forms</h2>
+              <div className="h-100 bg-white shadow-sm rounded-lg p-6 border-t-4 border-primary">
+                <h2 className="text-lg font-semibold text-secondary mb-6 ">Input Forms</h2>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <button className="p-4 border rounded-md bg-accent-light hover:bg-accent transition text-dark">
-                    Product Information
-                  </button>
-                  <button className="p-4 border rounded-md bg-accent-light hover:bg-accent transition text-dark">
-                    Customer Data
-                  </button>
-                  <button className="p-4 border rounded-md bg-accent-light hover:bg-accent transition text-dark">
-                    Survey Responses
-                  </button>
-                  <button className="p-4 border rounded-md bg-accent-light hover:bg-accent transition text-dark">
-                    Employee Records
-                  </button>
+                  <div className="">
+                    <label for="judul-berita">Judul Berita </label>
+                    <input type="text" placeholder="Judul Berita" id="judul-berita" className="border p-2 mr-2"></input>
+                  </div>
+                  <div className="">
+                    <label for="">Deskripsi Berita </label>
+                    <input type="text" placeholder="Descripsi Berita" id="Descripsi-Berita" className="border p-2 mr-2"></input>
+                  </div>
+                  <div className="">
+                    <label for="Tanggal-Pembuatan-Berita">Tanggal Pembuatan Berita</label>
+                    <input type="text" placeholder="Tanggal Pembuatan Berita" id="Tanggal-Pembuatan-Berita" className="border p-2 mr-2"></input>
+                  </div>
                 </div>
               </div>
             )}

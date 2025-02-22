@@ -39,21 +39,19 @@
   .medlog {
     display: flex;
     gap: 7px;
-    padding: 5px;
-  
+    padding-top: 12px;
   }
   
   .medsos-logo{
     border-radius: 100%;
-    background-color: var(--color3);
-    padding: 2px;
-  
+    background-color: var(--color4);
+    padding: 7px;
   }
   .medsos-logo i{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 21px;
+
     color: var(--color9);
   }
   
@@ -79,8 +77,9 @@
     gap: 7px;
   }
   
-  .kami a,
-  .kami i {
+  .kami a{
+    display: flex;
+    gap: 5px;
     color: var(--color3);
   }
   
@@ -95,7 +94,6 @@
     top: 100%;
     padding: 43px;
     display: flex;
-   
   }
   
   .info-layan-bis-lain {

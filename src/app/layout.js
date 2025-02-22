@@ -1,6 +1,7 @@
 import "../app/styles/globals.css";
 import AuthProvider from "../app/components/SessionProvider";
 
+
 export const metadata = {
   title: "Medigrid App",
   description: "Great Medical for you",

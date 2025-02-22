@@ -57,19 +57,17 @@ export default function Home() {
         <div className={styles["kotak"]}></div>
 
         <div className={styles["header-1"]}>
-          <h1 className={styles["head-1"]}>HIDUP ITU GAMPANG</h1>
+          <h1 className={styles["head-1"]}>MEDIGRID</h1>
           <h1 className={styles["head-2"]}>
-            PAKAI KLINIK INI{" "}
+              ELECTRONIC{" "}
             <span className={styles["highlight-text"]}>
               {" "}
-              SAJA BIAR MAKIN GAMPANG
+              MEDICAL RECORD
             </span>
           </h1>
 
           <p className={styles["lorem"]}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illo
-            nobis nihil doloribus quasi aspernatur omnis, mollitia ex autem! Ab,
-            odit! Ipsam consequuntur nemo eaque, et illum atque aut neque.
+            MediGrid adalah sebuah aplikasi digital berbasis web yang dirancang untuk membantu klinik dan fasilitas kesehatan dalam mengelola operasional secara lebih efisien dan modern. MediGrid hadir sebagai solusi inovatif untuk mendukung digitalisasi layanan kesehatan di Indonesia.
           </p>
           <Link href="" className={styles["button"]}>
             Coba Sekarang <span className={styles["arrow"]}>→</span>
@@ -223,7 +221,7 @@ export default function Home() {
                 <div className={styles["testi-text"]}>
                   <h4>alkawiyu</h4>
                   <p>
-                    “MedicIni sangat berperan penting dalam menyelesaikan
+                    "Medigrid sangat berperan penting dalam menyelesaikan
                     permasalahan yang ada pada klinik kami”
                   </p>
                 </div>
@@ -239,7 +237,7 @@ export default function Home() {
                 </div>
                 <div className={styles["testi-text"]}>
                   <h4>Muhammad yusa</h4>
-                  <p>“MedicIni sangat membantu kami dalam hal kesehatan”</p>
+                  <p>MediGrid sangat membantu kami dalam hal kesehatan”</p>
                 </div>
               </div>
 
@@ -254,7 +252,7 @@ export default function Home() {
                 </div>
                 <div className={styles["testi-text"]}>
                   <h4>andrianto</h4>
-                  <p>“MedicIni sangat bermanfaat!”</p>
+                  <p>MediGrid sangat bermanfaat!”</p>
                 </div>
               </div>
             </div>

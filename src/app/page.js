@@ -50,6 +50,8 @@ export default function Home() {
           </div>
         </nav>
       </section>
+   
+    {/* MAIN Page */}
 
       <section className={styles["main"]}>
         <div className={styles["obat"]}></div>
@@ -95,6 +97,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Berita */}
+
       <section className={styles["berita"]}>
         <header className={styles["news-head"]}>
           <div className={styles['imag']}>
@@ -112,16 +117,14 @@ export default function Home() {
               <h2>Info Terkini</h2>
               <article className={styles["ocehan"]}>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Assumenda reprehenderit at deleniti, rem eaque eligendi fugit
+                  t Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda reprehenderiat deleniti, rem eaque eligendi fugit
                   quaerat dignissimos ipsum ducimus facere voluptates laborum,
                   repudiandae dicta expedita, labore libero consequuntur harum.
                 </p>
               </article>
             </div>
-            <div className={styles["all-news"]}>
-              <Link href="/blog">All News</Link>
-            </div>
+    
           </div>
         </header>
         <div className={styles["card-berita"]}>
@@ -138,11 +141,9 @@ export default function Home() {
                   <span>indodev</span>
                   <span>November 13, 2025</span>
                 </h6>
-                <h5 className={styles["card-title"]}>Card Title 1</h5>
+                <h5 className={styles["card-title"]}>Manfaat Kopi Untuk Kesehatan</h5>
                 <p className={styles["card-text"]}>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  Kopi adalah salah satu minuman paling diminati banyak orang, dan memiliki banyak khasiat... 
                 </p>
               </div>
               <div className={styles["card-footer"]}>
@@ -160,10 +161,9 @@ export default function Home() {
                   <span>indodev</span>
                   <span>November 13, 2025</span>
                 </h6>
-                <h5 className={styles["card-title"]}>Card Title 2</h5>
+                <h5 className={styles["card-title"]}>Bahaya Banyak Makan-makanan Junkfood</h5>
                 <p className={styles["card-text"]}>
-                  This card has supporting text below as a natural lead-in to
-                  additional content.
+                   Junkfood atau lebih sering dikenal sebagai makananan cepat saji, adalah makanan yang memilki cita rasa gurih...
                 </p>
               </div>
               <div className={styles["card-footer"]}>
@@ -179,13 +179,12 @@ export default function Home() {
                   <span>indodev</span>
                   <span>November 13, 2025</span>
                 </h6>
-                <h5 className={styles["card-title"]}>Card Title 3</h5>
+                <h5 className={styles["card-title"]}>Rhintis Penyebab Dan Cara Mengobati</h5>
                 <p className={styles["card-text"]}>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
+                   Rhinitis adalah kondisi peradangan pada selaput lendir hidung yang menyebabkan penyumbatan pada hidung dan tenggorokkan....
                 </p>
               </div>
+
               <div className={styles["card-footer"]}>
                 <small className={styles["text-muted"]}>
                   Last updated 10 mins ago

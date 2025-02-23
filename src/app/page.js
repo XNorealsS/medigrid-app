@@ -120,7 +120,7 @@ export default function Home() {
           <div className={styles["card-group"]}>
             <div className={styles["card1"]}>
               <Image
-                src="/img/satusehat.png"
+                src="/img/kopi.jpg"
                 alt="Logo"
                 width={400}
                 height={100}
@@ -129,12 +129,11 @@ export default function Home() {
                 <h6>
                   <span>indodev</span>
                   <span>November 13, 2025</span>
-                </h6>
-                <h5 className={styles["card-title"]}>Card Title 1</h5>
+                </h6>          
+      
+                <h5 className={styles['card-title']}>Manfaat Kopi Untuk Kesehatan</h5>
                 <p className={styles["card-text"]}>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                Kopi adalah salah satu minuman paling diminati banyak orang, dan memiliki banyak khasiat...
                 </p>
               <Link href="" className={styles['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
               </div>
@@ -146,17 +145,16 @@ export default function Home() {
             </div>
 
             <div className={styles["card1"]}>
-              <Image src="/img/bpjs.png" alt="Logo" width={400} height={100} />
+              <Image src="/img/th (1).jpg" alt="Logo" width={400} height={100} />
 
               <div className={styles["card-body"]}>
                 <h6>
                   <span>indodev</span>
                   <span>November 13, 2025</span>
                 </h6>
-                <h5 className={styles["card-title"]}>Card Title 2</h5>
+                <h5 className={styles['card-title']}>Bahaya Begadang</h5>
                 <p className={styles["card-text"]}>
-                  This card has supporting text below as a natural lead-in to
-                  additional content.
+                Banyak orang yang memilki hobi begadang tanpa mengetahui resikonya..
                 </p>
               <Link href="" className={styles['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
               </div>
@@ -167,17 +165,15 @@ export default function Home() {
               </div>
             </div>
             <div className={styles["card1"]}>
-              <Image src="/img/pse.png" alt="Logo" width={400} height={100} />
+              <Image src="/img/th.jpg" alt="Logo" width={400} height={100} />
               <div className={styles["card-body"]}>
                 <h6>
                   <span>indodev</span>
                   <span>November 13, 2025</span>
                 </h6>
-                <h5 className={styles["card-title"]}>Card Title 3</h5>
+                <h5 className={styles['card-title']}>Kenali Kanker, Penyebab,Gejala, dan Cara Mencegah</h5>
                 <p className={styles["card-text"]}>
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
+                Kanker adalah penyakit yang disebabkan oleh sel-sel abnormal yang membelah tak terkendali....
                 </p>
               <Link href="" className={styles['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
               </div>

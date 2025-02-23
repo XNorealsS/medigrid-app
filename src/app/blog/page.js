@@ -42,135 +42,137 @@ const blog = () => {
     <section className={stylesh['main']}>
         <div className={stylesh['header']}>
             <h1>BLOG</h1>
-            <p><span className={stylesh['gradi']}>Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini </span>yang kami sediakan untuk Anda</p>
+            <p><span className={stylesh['gradi']}>Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini yang kami sediakan untuk Anda</span></p>
         </div>
         <div className={stylesh['blog']}>
             <div className={stylesh['card1']}>
-                    <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                    <Image src="/img/kopi.jpg" alt="Logo" width={400} height={100} />
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Manfaat Kopi Untuk Kesehatan</h5>
+                        <p className={stylesh['card-text']}>Kopi adalah salah satu minuman paling diminati banyak orang, dan memiliki banyak khasiat... </p>
                         <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
-                    </div>
+                        </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/10-Most-Common-harmful-effects-of-junk-food-Everyone-should-know.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Bahaya Makan-Makanan Junkfood</h5>
+                        <p className={stylesh['card-text']}>Junkfood atau lebih sering dikenal sebagai makananan cepat saji, adalah makanan yang memilki cita rasa gurih...</p>
               <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
-
+                   
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/allergic-rhinitis-symptom-of-odor-pollen-flowering-portrait-asian-young-woman-hand-in-sneeze-blowing-runny-nose-after-smell-smelly-from-bloom-flower-holding-away-pink-flora-on-white-background-free-photo.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Rhintis Penyebab dan Cara Mengobatinya</h5>
+                        <p className={stylesh['card-text']}>Rhinitis  adalah kondisi peradangan pada selaput lendir hidung yang menyebabkan penyumbatan pada hidung dan tenggorokkan...</p>
               <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
-
+                    
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/bahaya-sering-menahan-buang-air-kecil-atau-kencing.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Bahaya Menanhan Buang Air Kecil Pada Kesehatan</h5>
+                        <p className={stylesh['card-text']}>Banyak orang memilki kebiasaan menahan buang air kecil, namun menahan buang air kecil dapat sangat berbahaya bagi tubuh...</p>
+                    
               <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
-
-                    </div>
+              </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/th.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Kenali Kanker, Penyebab,Gejala, dan Cara Mencegah</h5>
+                        <p className={stylesh['card-text']}>Kanker adalah penyakit yang disebabkan oleh sel-sel abnormal yang membelah tak terkendali....</p>
               <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
-
+                    
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/0b4fe9475c229e84.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+                        <h5 className={stylesh['card-title']}>Bahaya Pornografi</h5>
+                        <p className={stylesh['card-text']}>Banyak orang menonton Pornografi terutama pada remaja yang sedang dalam masa pubertas, namun Pornografi dapat menyebabkan masalahs serius...</p>
+              <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+                    
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/Stop Stunting.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+                        <h5 className={stylesh['card-title']}>Cara Mencegah Agar Anak Tidak Terkenak Stunting</h5>
+                        <p className={stylesh['card-text']}>Indonesia adalah negara dengan anak stunting terbanyak ke-2 dikawasan asia tenggra dan ke-5 di dunia...</p>
+              <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+                    
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
-
+                <Image src="/img/th (1).jpg" alt="Logo" width={400} height={100} />
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+                        <h5 className={stylesh['card-title']}>Bahaya Begadang</h5>
+                        <p className={stylesh['card-text']}>Banyak orang yang memilki hobi begadang tanpa mengetahui resikonya...</p>
+              <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+                
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>

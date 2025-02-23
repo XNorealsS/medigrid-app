@@ -42,7 +42,7 @@ const blog = () => {
     <section className={stylesh['main']}>
         <div className={stylesh['header']}>
             <h1>BLOG</h1>
-            <p><span className={stylesh['gradi']}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span> Quod illo nobis nihil doloribus quasi aspernatur omnis, mollitia ex autem! Ab, <span className={stylesh['dient']}>odit! Ipsam consequuntur nemo eaque, et illum atque aut neque.</span></p>
+            <p><span className={stylesh['gradi']}>Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini </span>yang kami sediakan untuk Anda</p>
         </div>
         <div className={stylesh['blog']}>
             <div className={stylesh['card1']}>
@@ -54,6 +54,7 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -69,6 +70,8 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -84,6 +87,8 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -99,6 +104,8 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -114,6 +121,8 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
+
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -129,6 +138,7 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -144,6 +154,7 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -159,6 +170,7 @@ const blog = () => {
                         </h6>
                         <h5 className={stylesh['card-title']}>Card Title 1</h5>
                         <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <Link href="" className={stylesh['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>

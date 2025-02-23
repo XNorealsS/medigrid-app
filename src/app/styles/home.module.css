@@ -295,10 +295,7 @@ gap: 8em
 }
 
 .news-header {
-  display: flex;
-  justify-content: space-evenly;
-  margin: auto;
-  gap: 160px;
+  margin-left: 190px;
 }
 
 .beri {
@@ -329,22 +326,6 @@ gap: 8em
   text-align: justify;
   margin-top: 34px;
 }
-
-
-.all-news a {
-  background-color: var(--color2);
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  display: inline-block;
-}
-
-.all-news a:hover {
-  background-color: var(--color9);
-}
-
 
 .card-berita {
   margin: 45px;
@@ -416,6 +397,15 @@ gap: 8em
 /* Agar teks kecil terlihat rapi */
 .text-muted {
   color: #6c757d;
+}
+
+.baca {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 12px;
+  color: var(--color9);
 }
 
 

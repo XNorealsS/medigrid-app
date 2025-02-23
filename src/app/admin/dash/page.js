@@ -5,15 +5,24 @@ import Image from "next/image";
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FiUpload, FiFileText, FiDatabase, FiUsers, FiSettings, FiLogOut, FiMenu, FiX } from "react-icons/fi";
-import styles from '@/app/styles/dashboard.module.css';
+import {
+  FiUpload,
+  FiFileText,
+  FiDatabase,
+  FiUsers,
+  FiMail,
+  FiSettings,
+  FiLogOut,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
+import styles from "@/app/styles/dashboard.module.css";
 import Link from "next/link";
-
 
 export default function Dashboard() {
   useEffect(() => {
-    const style = document.createElement('style');
-    style.id = 'dashboard-tailwind-styles';
+    const style = document.createElement("style");
+    style.id = "dashboard-tailwind-styles";
     style.innerHTML = `
       .min-h-screen { min-height: 100vh; }
       .bg-primary { background-color: #40c9b2; }
@@ -42,6 +51,7 @@ export default function Dashboard() {
       .h-5 { height: 1.25rem; }
       .h-12 { height: 3rem; }
       .h-16 { height: 4rem; }
+      .h-20 { height: 20rem; }
       .h-100 {height: 70vh;}
       .w-5 { width: 1.25rem; }
       .w-12 { width: 3rem; }
@@ -93,7 +103,7 @@ export default function Dashboard() {
     `;
     document.head.appendChild(style);
     return () => {
-      document.getElementById('dashboard-tailwind-styles')?.remove();
+      document.getElementById("dashboard-tailwind-styles")?.remove();
     };
   }, []);
 
@@ -128,7 +138,9 @@ export default function Dashboard() {
   const DataInputForm = () => (
     <form className="space-y-6">
       <div>
-        <label htmlFor="title" className="block text-sm font-medium text-dark">Title</label>
+        <label htmlFor="title" className="block text-sm font-medium text-dark">
+          Title
+        </label>
         <input
           type="text"
           id="title"
@@ -136,9 +148,14 @@ export default function Dashboard() {
           placeholder="Enter title"
         />
       </div>
-      
+
       <div>
-        <label htmlFor="description" className="block text-sm font-medium text-dark">Description</label>
+        <label
+          htmlFor="description"
+          className="block text-sm font-medium text-dark"
+        >
+          Description
+        </label>
         <textarea
           id="description"
           rows="4"
@@ -146,16 +163,26 @@ export default function Dashboard() {
           placeholder="Enter description"
         ></textarea>
       </div>
-      
+
       <div>
-        <label htmlFor="file" className="block text-sm font-medium text-dark">Upload File</label>
+        <label htmlFor="file" className="block text-sm font-medium text-dark">
+          Upload File
+        </label>
         <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-accent border-dashed rounded-md">
           <div className="space-y-1 text-center">
             <FiUpload className="mx-auto h-12 w-12 text-primary" />
             <div className="flex text-sm text-dark">
-              <label htmlFor="file-upload" className="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-secondary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary">
+              <label
+                htmlFor="file-upload"
+                className="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-secondary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
+              >
                 <span>Upload a file</span>
-                <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                <input
+                  id="file-upload"
+                  name="file-upload"
+                  type="file"
+                  className="sr-only"
+                />
               </label>
               <p className="pl-1">or drag and drop</p>
             </div>
@@ -163,12 +190,12 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-      
+
       <div>
         <button
           type="submit"
           className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition"
-        >
+          >
           Submit
         </button>
       </div>
@@ -176,47 +203,58 @@ export default function Dashboard() {
   );
 
   return (
-<div className="min-h-screen bg-light">
-  {/* Top Navigation Bar */}
-  <div className="bg-white shadow-sm">
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="flex justify-between h-16">
-        <div className="flex items-center">
-          <button 
-            className="inline-flex items-center justify-center p-2 rounded-md text-primary md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
-          <div className="flex items-center ml-4 md:ml-0">
-            {/* Logo */}
-           
-            <Image src="/img/medigrid.jpg" alt="Logo" width={100} height={100}></Image>
-            
-            <div className="flex flex-col">
-              <h1 className="text-xl font-semibold text-secondary">Dashboard</h1>
+    <div className="min-h-screen bg-light">
+      {/* Top Navigation Bar */}
+      <div className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <button
+                className="inline-flex items-center justify-center p-2 rounded-md text-primary md:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+              </button>
+              <div className="flex items-center ml-4 md:ml-0">
+                {/* Logo */}
+
+                <Image
+                  src="/img/medigrid.jpg"
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                ></Image>
+
+                <div className="flex flex-col">
+                  <h1 className="text-xl font-semibold text-secondary">
+                    Dashboard
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center">
+              {/* <span className="text-dark mr-4">{session.user?.name || "User"}</span> */}
+              <button
+                onClick={() => signOut()}
+                className="inline-flex items-center px-3 py-1 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary-dark transition"
+              >
+                <FiLogOut className="mr-2" />
+                Logout
+              </button>
             </div>
           </div>
         </div>
-        <div className="flex items-center">
-          {/* <span className="text-dark mr-4">{session.user?.name || "User"}</span> */}
-          <button
-            onClick={() => signOut()}
-            className="inline-flex items-center px-3 py-1 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary-dark transition"
-          >
-            <FiLogOut className="mr-2" />
-            Logout
-          </button>
-        </div>
       </div>
-    </div>
-  </div>
 
       <div className="flex flex-1">
         {/* Sidebar */}
-        <aside className={`${
-          mobileMenuOpen ? "block" : "hidden"
-        } md:block w-64 bg-accent-light shadow-md z-10 md:relative fixed inset-y-0 left-0 ${styles.dashboardSidebar}`}>
+        <aside
+          className={`${
+            mobileMenuOpen ? "block" : "hidden"
+          } md:block w-64 bg-accent-light shadow-md z-10 md:relative fixed inset-y-0 left-0 ${
+            styles.dashboardSidebar
+          }`}
+        >
           <div className="h-full px-3 py-4 overflow-y-auto">
             <nav className="space1-y-1">
               <button
@@ -239,7 +277,7 @@ export default function Dashboard() {
                 }`}
               >
                 <FiFileText className="mr-3 h-5 w-5" />
-                Upload Berita 
+                Upload Berita
               </button>
               <button
                 onClick={() => handleTabChange("data")}
@@ -252,6 +290,19 @@ export default function Dashboard() {
                 <FiDatabase className="mr-3 h-5 w-5" />
                 Dynamic Element
               </button>
+
+              <button
+                onClick={() => handleTabChange("testimoni")}
+                className={`flex items-center  px-3 py-2 text-sm font-medium rounded-md w-full transition ${
+                  activeTab === "testimoni"
+                    ? "bg-accent text-primary"
+                    : "text-dark hover:bg-accent-hover"
+                }`}
+              >
+                <FiMail className="mr-3 h-5 w-5" />
+                Testimoni
+              </button>
+
               <button
                 onClick={() => handleTabChange("users")}
                 className={`flex items-center  px-3 py-2 text-sm font-medium rounded-md w-full transition ${
@@ -264,13 +315,16 @@ export default function Dashboard() {
                 Settings
               </button>
             </nav>
-            <Link href='/'
-                className={`flex inset-y-1 items-center relative space-y-6 px-3 py-2 text-sm font-medium rounded-md w-full transition ${
-                  activeTab === "forms"
-                    ? "bg-accent text-primary"
-                    : "text-dark hover:bg-accent-hover"
-                }`}>
-                Back</Link>
+            <Link
+              href="/"
+              className={`flex inset-y-1 items-center relative space-y-6 px-3 py-2 text-sm font-medium rounded-md w-full transition ${
+                activeTab === "forms"
+                  ? "bg-accent text-primary"
+                  : "text-dark hover:bg-accent-hover"
+              }`}
+            >
+              Back
+            </Link>
           </div>
         </aside>
 
@@ -279,7 +333,9 @@ export default function Dashboard() {
           <div className="max-w-7xl mx-auto">
             {activeTab === "upload" && (
               <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-primary">
-                <h2 className="text-lg font-semibold text-secondary mb-6">Upload Data</h2>
+                <h2 className="text-lg font-semibold text-secondary mb-6">
+                  Upload Data
+                </h2>
                 <DataInputForm />
               </div>
             )}
@@ -287,19 +343,78 @@ export default function Dashboard() {
             {/* input data berita */}
             {activeTab === "forms" && (
               <div className="h-100 bg-white shadow-sm rounded-lg p-6 border-t-4 border-primary">
-                <h2 className="text-lg font-semibold text-secondary mb-6 ">Input Forms</h2>
+                <h2 className="text-lg font-semibold text-secondary mb-6 ">
+                  Input Forms
+                </h2>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="">
                     <label for="judul-berita">Judul Berita </label>
-                    <input type="text" placeholder="Judul Berita" id="judul-berita" className="border p-2 mr-2"></input>
+                    <input
+                      type="text"
+                      placeholder="Judul Berita"
+                      id="judul-berita"
+                      className="border p-2 mr-2 mb-6 flex w-full border-accent"
+                    ></input>
                   </div>
                   <div className="">
                     <label for="">Deskripsi Berita </label>
-                    <input type="text" placeholder="Descripsi Berita" id="Descripsi-Berita" className="border p-2 mr-2"></input>
+                    <textarea
+                      id="deskripsi"
+                      rows="4"
+                      className="mt-1 block w-full px-3 py-2 border border-accent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Enter title"
+                    ></textarea>
                   </div>
                   <div className="">
-                    <label for="Tanggal-Pembuatan-Berita">Tanggal Pembuatan Berita</label>
-                    <input type="text" placeholder="Tanggal Pembuatan Berita" id="Tanggal-Pembuatan-Berita" className="border p-2 mr-2"></input>
+                    <label for="Tanggal-Pembuatan-Berita">
+                      Tanggal Pembuatan Berita
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Tanggal Pembuatan Berita"
+                      id="Tanggal-Pembuatan-Berita"
+                      className="border p-2 mr-2 flex w-full border-accent"
+                    ></input>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="file"
+                      className=" block text-sm font-medium text-dark "
+                    >
+                      Upload File
+                    </label>
+                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-accent border-dashed rounded-md">
+                      <div className="space-y-1 text-center">
+                        <FiUpload className="mx-auto h-12 w-12 text-primary" />
+                        <div className="flex text-sm text-dark">
+                          <label
+                            htmlFor="file-upload"
+                            className="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-secondary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
+                          >
+                            <span>Upload a file</span>
+                            <input
+                              id="file-upload"
+                              name="file-upload"
+                              type="file"
+                              className="sr-only"
+                            />
+                          </label>
+                          <p className="pl-1">or drag and drop</p>
+                        </div>
+                        <p className="text-xs text-dark">
+                          PNG, JPG, PDF up to 10MB
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      type="submit"
+                      className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition"
+                    >
+                      Submit
+                    </button>
                   </div>
                 </div>
               </div>
@@ -307,24 +422,36 @@ export default function Dashboard() {
 
             {activeTab === "data" && (
               <div className="bg-white shadow-sm rounded-lg p-6">
-                <h2 className="text-lg font-semibold text-gray-800 mb-6">View Data</h2>
-                <p className="text-gray-600">Data view will be implemented here.</p>
+                <h2 className="text-lg font-semibold text-gray-800 mb-6">
+                  View Data
+                </h2>
+                <p className="text-gray-600">
+                  Data view will be implemented here.
+                </p>
               </div>
             )}
 
             {/* Users */}
             {activeTab === "users" && (
               <div className="bg-white shadow-sm rounded-lg p-6">
-                <h2 className="text-lg font-semibold text-gray-800 mb-6">User Management</h2>
-                <p className="text-gray-600">User management interface will be implemented here.</p>
+                <h2 className="text-lg font-semibold text-gray-800 mb-6">
+                  User Management
+                </h2>
+                <p className="text-gray-600">
+                  User management interface will be implemented here.
+                </p>
               </div>
             )}
 
             {/* Settings */}
             {activeTab === "settings" && (
               <div className="bg-white shadow-sm rounded-lg p-6">
-                <h2 className="text-lg font-semibold text-gray-800 mb-6">Settings</h2>
-                <p className="text-gray-600">Settings interface will be implemented here.</p>
+                <h2 className="text-lg font-semibold text-gray-800 mb-6">
+                  Settings
+                </h2>
+                <p className="text-gray-600">
+                  Settings interface will be implemented here.
+                </p>
               </div>
             )}
           </div>

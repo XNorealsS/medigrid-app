@@ -129,7 +129,7 @@ export default function Home() {
           <div className={styles["card-group"]}>
             <div className={styles["card1"]}>
               <Image
-                src="/img/satusehat.png"
+                src="/img/kopi.jpg"
                 alt="Logo"
                 width={400}
                 height={100}
@@ -152,7 +152,7 @@ export default function Home() {
             </div>
 
             <div className={styles["card1"]}>
-              <Image src="/img/bpjs.png" alt="Logo" width={400} height={100} />
+              <Image src="/img/10-Most-Common-harmful-effects-of-junk-food-Everyone-should-know.jpg" alt="Logo" width={400} height={100} />
 
               <div className={styles["card-body"]}>
                 <h6>
@@ -171,7 +171,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles["card1"]}>
-              <Image src="/img/pse.png" alt="Logo" width={400} height={100} />
+              <Image src="/img/allergic-rhinitis-symptom-of-odor-pollen-flowering-portrait-asian-young-woman-hand-in-sneeze-blowing-runny-nose-after-smell-smelly-from-bloom-flower-holding-away-pink-flora-on-white-background-free-photo.jpg" alt="Logo" width={400} height={100} />
               <div className={styles["card-body"]}>
                 <h6>
                   <span>indodev</span>

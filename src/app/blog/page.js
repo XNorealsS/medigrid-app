@@ -46,7 +46,7 @@ const blog = () => {
         </div>
         <div className={stylesh['blog']}>
             <div className={stylesh['card1']}>
-                    <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                    <Image src="/img/kopi.jpg" alt="Logo" width={400} height={100} />
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
@@ -60,7 +60,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/10-Most-Common-harmful-effects-of-junk-food-Everyone-should-know.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
@@ -75,7 +75,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/allergic-rhinitis-symptom-of-odor-pollen-flowering-portrait-asian-young-woman-hand-in-sneeze-blowing-runny-nose-after-smell-smelly-from-bloom-flower-holding-away-pink-flora-on-white-background-free-photo.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
@@ -90,7 +90,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/bahaya-sering-menahan-buang-air-kecil-atau-kencing.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
@@ -105,7 +105,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/th.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
@@ -120,7 +120,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/0b4fe9475c229e84.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
@@ -135,7 +135,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/Stop Stunting.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
@@ -150,15 +150,14 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bakc.jpg" alt="Logo" width={400} height={100} />
-
+                <Image src="/img/th (1).jpg" alt="Logo" width={400} height={100} />
                     <div className={stylesh['card-body']}>
                         <h6>
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
                         <h5 className={stylesh['card-title']}>Bahaya Begadang</h5>
-                        <p className={stylesh['card-text']}>Banyak orang yang memilki hobi begadang, namun begadang dapat menyababkan pernyakit yang sangat berbahaya...</p>
+                        <p className={stylesh['card-text']}>Banyak orang yang memilki hobi begadang tanpa mengetahui resikonya...</p>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>

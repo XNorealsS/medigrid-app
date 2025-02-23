@@ -352,6 +352,10 @@ gap: 8em
   justify-content: space-between;
 }
 
+.card1:hover {
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .card-img-top {
   background-color: var(--color9);
   border-top-left-radius: 0.25rem;
@@ -409,14 +413,12 @@ gap: 8em
 }
 
 
-
-
 /* testimoni */
 
 .testimoni {
   position: relative;
   background-color: var(--color3);
-  height: 80vh;
+  height: 100vh;
 }   
 
 .header-testi {
@@ -431,7 +433,7 @@ gap: 8em
 
 .gambar {
   position: absolute;
-  left: 50%;
+  left: 46%;
   top: 40%;
   transform: translateX(-40%);
 }
@@ -468,8 +470,8 @@ object-fit: cover;
 
  .testi-card2 {
   position: relative;
-  top: 180%;
-  left: 10%;
+  top: 300%;
+  left: 20%;
     display: flex;
     flex-direction: row;
     gap: 23px;
@@ -493,8 +495,8 @@ object-fit: cover;
 
 .testi-card3 {
   position: relative;
-  top: 20%;
-  right: 105px;
+  top: 30%;
+  right: 10px;
     display: flex;
     flex-direction: row;
     gap: 23px;

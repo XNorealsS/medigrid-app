@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "aos": "^2.3.4",
     "axios": "^1.7.9",
     "boxicons": "^2.1.4",
+    "framer-motion": "^12.4.7",
     "next": "15.1.7",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",

@@ -95,7 +95,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/bahaya-sering-menahan-buang-air-kecil-atau-kencing.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/buang air.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>
@@ -129,7 +129,7 @@ const blog = () => {
                     </div>
                 </div>
                 <div className={stylesh['card1']}>
-                <Image src="/img/0b4fe9475c229e84.jpg" alt="Logo" width={400} height={100} />
+                <Image src="/img/pornografi.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
                         <h6>

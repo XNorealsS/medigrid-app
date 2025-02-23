@@ -1,9 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "./components/footer";
 import styles from "./styles/home.module.css";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 500, // Durasi animasi dalam milidetik (1000ms = 1 detik)
+      easing: "ease-in-out", // Efek transisi
+      once:   false,
+      mirror: false, 
+      offset: 200,
+    });
+  }, []);
   return (
     <>
       <nav className={styles["first-nav"]}>
@@ -37,20 +51,27 @@ export default function Home() {
               >
                 Tentang Kami
               </Link>
-              <Link href="/fitur" className={styles["hove"]}>
+              <Link
+               href="/fitur"
+               className={styles["hove"]}
+                >
                 Fitur & Layanan
               </Link>
-              <Link href="/harga" className={styles["hove"]}>
+              <Link href="/harga"
+               className={styles["hove"]}
+               >
                 Harga
               </Link>
-              <Link href="/blog" className={styles["hove"]}>
+              <Link 
+              href="/blog"
+               className={styles["hove"]}
+               >
                 Blog
               </Link>
             </div>
           </div>
         </nav>
       </section>
-
       <section className={styles["main"]}>
         <div className={styles["obat"]}></div>
         <div className={styles["obat2"]}></div>
@@ -66,7 +87,7 @@ export default function Home() {
             </span>
           </h1>
 
-          <p className={styles["lorem"]}>
+          <p className={styles["lorem"]} >
             MediGrid adalah sebuah aplikasi digital berbasis web yang dirancang untuk membantu klinik dan fasilitas kesehatan dalam mengelola operasional secara lebih efisien dan modern. MediGrid hadir sebagai solusi inovatif untuk mendukung digitalisasi layanan kesehatan di Indonesia.
           </p>
           <Link href="" className={styles["button"]}>
@@ -82,34 +103,50 @@ export default function Home() {
                 alt="Logo"
                 width={140}
                 height={100}
+                data-aos="fade-right"
               />
             </div>
             <div className={styles["bpjs"]}>
-              <Image src="/img/bpjs.png" alt="Logo" width={140} height={100} />
+              <Image 
+              src="/img/bpjs.png" 
+              alt="Logo" 
+              width={140} 
+              height={100} 
+              data-aos="fade-up"
+              />
             </div>
             <div className={styles["pse"]}>
-              <Image src="/img/pse.png" alt="Logo" width={140} height={100} />
+              <Image 
+              src="/img/pse.png" 
+              alt="Logo"
+              width={140} 
+              height={100} 
+               data-aos="fade-left"
+              />
             </div>
           </div>
         </div>
       </section>
+   
       <section className={styles["berita"]}>
         <header className={styles["news-head"]}>
           <div className={styles['imag']}>
         <Image src='/img/vector1.png' 
         alt="logo"
-        width={100} height={100}></Image>
+        width={100}
+        height={100}></Image>
         </div>
           <div className={styles["hiasan"]}></div>
           <div className={styles["news-header"]}>
             <div className={styles["sub-nama"]}>
-              <p className={styles["beri"]}>
-                <span className={styles["bulat"]}></span>Berita
+              <p className={styles["beri"]} data-aos="fade-up-right">
+                <span className={styles["bulat"]}></span>
+                Berita
                 <span className={styles["bulat"]}></span>
               </p>
-              <h2>Info Terkini</h2>
+              <h2 data-aos="fade-up-right">Info Terkini</h2>
               <article className={styles["ocehan"]}>
-                <p>
+                <p data-aos="fade-up-right">
                 Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini yang kami sediakan untuk Anda
                 </p>
               </article>
@@ -118,12 +155,14 @@ export default function Home() {
         </header>
         <div className={styles["card-berita"]}>
           <div className={styles["card-group"]}>
-            <div className={styles["card1"]}>
+            <div className={styles["card1"]} data-aos="fade-right">
               <Image
                 src="/img/kopi.jpg"
                 alt="Logo"
                 width={400}
                 height={100}
+                className={styles['image']}
+
               />
               <div className={styles["card-body"]}>
                 <h6>
@@ -144,7 +183,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={styles["card1"]}>
+            <div className={styles["card1"]} data-aos="fade-down">
               <Image src="/img/th (1).jpg" alt="Logo" width={400} height={100} />
 
               <div className={styles["card-body"]}>
@@ -164,7 +203,7 @@ export default function Home() {
                 </small>
               </div>
             </div>
-            <div className={styles["card1"]}>
+            <div className={styles["card1"]} data-aos="fade-left">
               <Image src="/img/th.jpg" alt="Logo" width={400} height={100} />
               <div className={styles["card-body"]}>
                 <h6>
@@ -193,7 +232,7 @@ export default function Home() {
         </header>
         <div className={styles["testi"]}>
           <div className={styles["back"]}>
-            <div className={styles["gambar"]}>
+            <div className={styles["gambar"]} data-aos="zoom-in-down">
               <Image
                 src="/img/bulat.png"
                 alt="Logo"
@@ -202,7 +241,7 @@ export default function Home() {
               ></Image>
             </div>
             <div className={styles["testimoni-wrapper"]}>
-              <div className={styles["testi-card1"]}>
+              <div className={styles["testi-card1"]} data-aos="zoom-in">
                 <div className={styles["image"]}>
                   <Image
                     src="/img/bpjs.png"
@@ -219,7 +258,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className={styles["testi-card2"]}>
+              <div className={styles["testi-card2"]} data-aos="zoom-in">
                 <div className={styles["image"]}>
                   <Image
                     src="/img/satusehat.png"
@@ -234,7 +273,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className={styles["testi-card3"]}>
+              <div className={styles["testi-card3"]} data-aos="zoom-in">
                 <div className={styles["image"]}>
                   <Image
                     src="/img/pse.png"
@@ -255,5 +294,6 @@ export default function Home() {
 
       <Footer />
     </>
+    
   );
 }

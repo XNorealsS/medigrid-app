@@ -98,7 +98,7 @@ const blog = () => {
                             <span>November 13, 2025</span>
                         </h6>
                         <h5 className={stylesh['card-title']}>Bahaya Menanhan Buang Air Kecil Pada Kesehatan</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p className={stylesh['card-text']}>Banyak orang memilki kebiasaan menahan buang air kecil, namun menahan buang air kecil dapat sangat berbahaya bagi tubuh...</p>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -112,8 +112,8 @@ const blog = () => {
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Kenali Kanker, Penyebab,Gejala, dan Cara Mencegah</h5>
+                        <p className={stylesh['card-text']}>Kanker adalah penyakit yang disebabkan oleh sel-sel abnormal yang membelah tak terkendali....</p>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -127,8 +127,8 @@ const blog = () => {
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Bahaya Pornografi</h5>
+                        <p className={stylesh['card-text']}>Banyak orang menonton Pornografi terutama pada remaja yang sedang dalam masa pubertas, namun Pornografi dapat menyebabkan masalahs serius...</p>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -142,8 +142,8 @@ const blog = () => {
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Cara Mencegah Agar Anak Tidak Terkenak Stunting</h5>
+                        <p className={stylesh['card-text']}>Indonesia adalah negara dengan anak stunting terbanyak ke-2 dikawasan asia tenggra dan ke-5 di dunia...</p>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
@@ -157,8 +157,8 @@ const blog = () => {
                             <span>indodev</span>
                             <span>November 13, 2025</span>
                         </h6>
-                        <h5 className={stylesh['card-title']}>Card Title 1</h5>
-                        <p className={stylesh['card-text']}>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className={stylesh['card-title']}>Bahaya Begadang</h5>
+                        <p className={stylesh['card-text']}>Banyak orang yang memilki hobi begadang, namun begadang dapat menyababkan pernyakit yang sangat berbahaya...</p>
                     </div>
                     <div className={stylesh['card-footer']}>
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>

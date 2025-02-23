@@ -54,9 +54,11 @@ function footer() {
                                 </header>
                                 <div className={stylesx['list-info']}>
                                     <ul className={stylesx['list']}>
-                                        <li><Link href="">Tentang Kami</Link></li>
-                                        <li><Link href="">Tentang Kami</Link></li>
-                                        <li><Link href="">Tentang Kami</Link></li>
+                                        <li><Link href="">Manajemen Data Pasien Terpadu</Link></li>
+                                        <li><Link href="">Kartu Identitas Digital Pasien</Link></li>
+                                        <li><Link href="">Portal Pasien dan Layanan Mandiri</Link></li>
+                                        <li><Link href="">Analitik Data Kesehatan</Link></li>
+                                        <li><Link href="">Dukungan IoT dan Integrasi Sistem</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -66,9 +68,9 @@ function footer() {
                                 </header>
                                 <div className={stylesx['list-info']}>
                                     <ul className={stylesx['list']}>
-                                        <li><Link href="">Tentang Kami</Link></li>
-                                        <li><Link href="">Tentang Kami</Link></li>
-                                        <li><Link href="">Tentang Kami</Link></li>
+                                        <li><Link href=""></Link></li>
+                                        <li><Link href=""></Link></li>
+                                        <li><Link href=""></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -78,12 +80,12 @@ function footer() {
                                 </header>
                                 <div className={stylesx['list-info']}>
                                     <ul className={stylesx['list']}>
-                                        <li><Link href="">Tentang Kami</Link></li>
-                                        <li><Link href="">Tentang Kami</Link></li>
-                                        <li><Link href="">Tentang Kami</Link></li>
+                                        <li><Link href=""></Link></li>
+                                        <li><Link href=""></Link></li>
+                                        <li><Link href=""></Link></li>
                                     </ul>
                                 </div>
-                        </div>
+                            </div>
                         </div>
                     </div>
                     <div className={stylesx['menu-footer']}>
@@ -93,6 +95,18 @@ function footer() {
                             <Link href=""><i className='bx bxs-contact' ></i></Link>
                             <Link href=""><i className='bx bx-message-rounded-detail'></i></Link>
                         </div>
+                    </div>
+                    <div className={stylesx['maps']}>
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.038787499462!2d95.32758637503258!3d5.561269694419209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3040373fcb6725bd%3A0xe612b746e161a427!2sJl.%20Syiah%20Kuala%20No.10d%2C%20Bandar%20Baru%2C%20Kec.%20Kuta%20Alam%2C%20Kota%20Banda%20Aceh%2C%20Aceh%2023125!5e0!3m2!1sid!2sid!4v1740309282658!5m2!1sid!2sid"
+                    width="140%"
+                    height="200"
+                    style={{ border: 0 }}
+                    allowFullScreen // Perbaikan untuk React
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                        <p>Jl. Syiah Kuala No.10D, Bandar Baru, Kec. Kuta Alam, Kota Banda Aceh, Aceh 23125</p>
                     </div>
             </div>
     </footer>  

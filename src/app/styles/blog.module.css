@@ -189,6 +189,15 @@
     color: #6c757d;
   }
 
+  .baca {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 12px;
+    color: var(--color9);
+  }
+
     .button {
       display: flex;
       justify-content: center;
@@ -200,5 +209,8 @@
       background-color: var(--color5);
       padding: 5px 16px;
     }
+
+    
+
 
   

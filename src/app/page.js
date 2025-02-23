@@ -110,15 +110,9 @@ export default function Home() {
               <h2>Info Terkini</h2>
               <article className={styles["ocehan"]}>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Assumenda reprehenderit at deleniti, rem eaque eligendi fugit
-                  quaerat dignissimos ipsum ducimus facere voluptates laborum,
-                  repudiandae dicta expedita, labore libero consequuntur harum.
+                Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini yang kami sediakan untuk Anda
                 </p>
               </article>
-            </div>
-            <div className={styles["all-news"]}>
-              <Link href="/blog">All News</Link>
             </div>
           </div>
         </header>
@@ -142,6 +136,7 @@ export default function Home() {
                   lead-in to additional content. This content is a little bit
                   longer.
                 </p>
+              <Link href="" className={styles['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
               </div>
               <div className={styles["card-footer"]}>
                 <small className={styles["text-muted"]}>
@@ -163,6 +158,7 @@ export default function Home() {
                   This card has supporting text below as a natural lead-in to
                   additional content.
                 </p>
+              <Link href="" className={styles['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
               </div>
               <div className={styles["card-footer"]}>
                 <small className={styles["text-muted"]}>
@@ -183,6 +179,7 @@ export default function Home() {
                   lead-in to additional content. This card has even longer
                   content than the first to show that equal height action.
                 </p>
+              <Link href="" className={styles['baca']}>Baca Selengkapnya <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></Link>
               </div>
               <div className={styles["card-footer"]}>
                 <small className={styles["text-muted"]}>

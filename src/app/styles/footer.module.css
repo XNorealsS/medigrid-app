@@ -166,3 +166,13 @@
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
   }
+
+  .maps {
+    position: absolute;
+    left: 30%;
+    transform: translateY(140%);
+  }
+
+  .maps iframe {
+    border-radius: 11px;
+  }

@@ -1,254 +1,247 @@
-// Dashboard.jsx
 "use client";
-import Image from "next/image";
-
+import React, { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import {
-  FiUpload,
-  FiFileText,
-  FiDatabase,
-  FiUsers,
-  FiSettings,
-  FiLogOut,
-  FiMenu,
-  FiX,
-} from "react-icons/fi";
-import styles from "@/app/styles/dashboard.module.css";
+import Image from "next/image";
 import Link from "next/link";
+import { 
+  FiUpload, FiFileText, FiDatabase, FiSettings, 
+  FiLogOut, FiMenu, FiX, FiEdit2, FiTrash2 
+} from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
-export default function Dashboard() {
-  useEffect(() => {
-    const style = document.createElement("style");
-    style.id = "dashboard-tailwind-styles";
-    style.innerHTML = `
+// --- Dialog Component ---
+const Dialog = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null;
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+      <div className="bg-white rounded-lg p-6 w-full max-w-md m-4">
+        {children}
+      </div>
+    </div>
+  );
+};
 
-
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  padding: 20px;
-  background: var(--color-background);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #ffffff;
-
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-th, td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background: var(--color-primary);
-  color: white;
-  text-transform: uppercase;
-}
-
-tr:hover {
-  background: var(--color-accent-1);
-}
-
-td img {
-  width: 60px;  /* Ukuran gambar */
-  height: 60px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-
- .layout-container {
-        display: flex;
-        min-height: 100vh;
-      }
-      
-      .navbar-fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 64px;
-        background: white;
-        z-index: 50;
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-      }
-
-      .sidebar-fixed {
-        position: fixed;
-        top: 64px; /* Height of navbar */
-        left: 0;
-        bottom: 0;
-        width: 256px;
-        background-color: #ccf9f6;
-        overflow-y: auto;
-        z-index: 40;
-      }
-      
-      .main-content {
-        margin-left: 256px;
-        margin-top: 64px;
-        padding: 24px;
-        min-height: calc(100vh - 64px);
-        background-color: #f9fbfa;
-        overflow-y: auto;
-      }
-      
-      /* Mobile styles */
-      @media (max-width: 768px) {
-        .sidebar-fixed {
-          transform: translateX(-100%);
-          transition: transform 0.3s ease-in-out;
-        }
-        
-        .sidebar-fixed.active {
-          transform: translateX(0);
-        }
-        
-        .main-content {
-          margin-left: 0;
-        }
-      }
-      .min-h-screen { min-height: 100vh; }
-      .bg-primary { background-color: #40c9b2; }
-      .bg-secondary { background-color: #fbbc5c; }
-      .bg-light { background-color: #f9fbfa; }
-      .bg-accent { background-color: #a6e7dc; }
-      .bg-accent-light { background-color: #ccf9f6; }
-      .bg-warm { background-color: #f6d5a1; }
-      .bg-neutral { background-color: #dcd4c4; }
-      .hover\\:bg-primary-dark:hover { background-color: #4fb99c; }
-      .hover\\:bg-accent-hover:hover { background-color: #e1fbfb; }
-      .text-primary { color: #40c9b2; }
-      .text-secondary { color: #fbbc5c; }
-      .text-dark { color: #4fb99c; }
-      .text-light { color:rgb(255, 255, 255); }
-      .border-primary { border-color: #40c9b2; }
-      .border-accent { border-color: #a6e7dc; }
-      .bg-white { background-color: white; }
-      .text-white { color: white; }
-      .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
-      .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
-      .rounded-md { border-radius: 0.375rem; }
-      .rounded-lg { border-radius: 0.5rem; }
-      .flex { display: flex; }
-      .inline-flex { display: inline-flex; }
-      .hidden { display: none; }
-      .h-5 { height: 1.25rem; }
-      .h-12 { height: 3rem; }
-      .h-16 { height: 4rem; }
-      .h-100 {height: 70vh;}
-      .w-5 { width: 1.25rem; }
-      .w-12 { width: 3rem; }
-      .w-64 { width: 16rem; }
-      .w-full { width: 100%; }
-      .max-w-7xl { max-width: 80rem; }
-      .flex-1 { flex: 1 1 0%; }
-      .items-center { align-items: center; }
-      .justify-center { justify-content: center; }
-      .justify-between { justify-content: space-between; }
-      .space-y-1 > * + * { margin-top: 0.25rem; }
-      .space-y-6 > * + * { margin-top: 1.5rem; }
-      .p-2 { padding: 0.5rem; }
-      .p-4 { padding: 1rem; }
-      .p-6 { padding: 1.5rem; }
-      .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
-      .px-4 { padding-left: 1rem; padding-right: 1rem; }
-      .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-      .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-      .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-      .mr-2 { margin-right: 0.5rem; }
-      .mr-3 { margin-right: 0.75rem; }
-      .mr-4 { margin-right: 1rem; }
-      .mr-5 { margin-right: 4rem; }
-      .ml-4 { margin-left: 1rem; }
-      .mb-6 { margin-bottom: 1.5rem; }
-      .text-sm { font-size: 0.875rem; }
-      .text-lg { font-size: 1.125rem; }
-      .text-xl { font-size: 1.25rem; }
-      .font-medium { font-weight: 500; }
-      .font-semibold { font-weight: 600; }
-      .relative { position: relative; }
-      .fixed { position: fixed; }
-      .inset-y-0 { top: 0px; bottom: 0px; }
-      .inset-y-1 { top: 400px; }
-      .left-0 { left: 0px; }
-      .z-10 { z-index: 10; }
-      .border { border-width: 2px; }
-      .border-t-4 { border-top-width: 4px; }
-      .border-transparent { border-color: transparent; }
-      .transition { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-      .cursor-pointer { cursor: pointer; }
-      @media (min-width: 768px) {
-        .md\\:block { display: block; }
-        .md\\:hidden { display: none; }
-        .md\\:relative { position: relative; }
-        .md\\:ml-0 { margin-left: 0px; }
-      }
-    `;
-    document.head.appendChild(style);
-    return () => {
-      document.getElementById("dashboard-tailwind-styles")?.remove();
-    };
-  }, []);
-
-  const { data: session, status } = useSession();
-  const router = useRouter();
-  const [activeTab, setActiveTab] = useState("upload");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [newsList, setNewsList] = useState([]);
+// --- NewsForm Component ---
+const NewsForm = ({ onSubmit, initialData = {}, isEdit = false }) => {
   const [formData, setFormData] = useState({
-    title: "",
-    subtitle: "",
-    content: "",
+    title: initialData.title || "",
+    subtitle: initialData.subtitle || "",
+    content: initialData.content || "",
     image: null,
   });
-  const [message, setMessage] = useState("");
+  const [preview, setPreview] = useState(initialData.image_url || null);
 
-  const backendUrl =
-    process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: files ? files[0] : value,
+    }));
+    if (files && files[0]) {
+      const reader = new FileReader();
+      reader.onloadend = () => setPreview(reader.result);
+      reader.readAsDataURL(files[0]);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
+
+  
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {preview && (
+        <div className="relative h-40 w-full rounded-md border">
+          <Image src={preview} alt="Preview" fill objectFit="cover" className="rounded-md" />
+        </div>
+      )}
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
+        <input
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          className="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-primary"
+          required
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Subtitle</label>
+        <input
+          type="text"
+          name="subtitle"
+          value={formData.subtitle}
+          onChange={handleChange}
+          className="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-primary"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Content</label>
+        <textarea
+          name="content"
+          value={formData.content}
+          onChange={handleChange}
+          rows="4"
+          className="w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-primary"
+          required
+        ></textarea>
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-2">Image</label>
+        <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md">
+          <div className="space-y-1 text-center">
+            <FiUpload className="mx-auto h-12 w-12 text-gray-400" />
+            <div className="flex text-sm text-gray-600">
+              <label className="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-primary-dark">
+                <span>Upload an image</span>
+                <input
+                  type="file"
+                  name="image"
+                  onChange={handleChange}
+                  className="sr-only"
+                  accept="image/*"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark"
+      >
+        {isEdit ? "Update News" : "Create News"}
+      </button>
+    </form>
+  );
+};
+
+const NewsCard = ({ news, onEdit, onDelete }) => {
+  const [imageError, setImageError] = useState(false);
+  
+  const imageUrl = news.image_url 
+    ? (news.image_url.includes('http') 
+        ? news.image_url 
+        : `http://localhost:5000${news.image_url}`)
+    : null;
+
+  return (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
+
+      {/* Gambar Berita */}
+      {imageUrl && !imageError ? (
+        <div className="relative h-44 w-full">
+          <Image 
+            src={imageUrl}
+            alt={news.title || "News image"} 
+            fill 
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="rounded-t-lg object-cover"
+            onError={() => setImageError(true)}
+          />
+        </div>
+      ) : (
+        <div className="h-44 w-44 bg-gray-200 flex items-center justify-center">
+          <span className="text-gray-400">
+            {imageError ? "Error loading image" : "No image available"}
+          </span>
+        </div>
+      )}
+
+      {/* Konten Berita */}
+      <div className="p-4 flex flex-col justify-between h-52">
+        <div>
+          <h3 className="text-lg font-semibold text-gray-900 line-clamp-2">{news.title}</h3>
+          <p className="text-sm text-gray-600 line-clamp-2">{news.subtitle}</p>
+        </div>
+
+        {/* Tombol Baca Selengkapnya */}
+        <div className="mt-2">
+          <a href={`/news/${news.id}`} className="text-blue-600 font-semibold text-sm hover:underline">
+            BACA SELENGKAPNYA
+          </a>
+        </div>
+
+        {/* Informasi Penulis & Tanggal */}
+        <div className="text-xs text-gray-500 mt-3">
+          <span>{news.author || "Anonim"}</span> • <span>{news.date || "Tanggal tidak tersedia"}</span>
+        </div>
+
+        {/* Tombol Edit & Hapus */}
+        <div className="mt-2 flex justify-end space-x-2">
+          <button onClick={() => onEdit(news)} className="p-1 text-primary hover:text-primary-dark transition-colors">
+            <FiEdit2 size={16} />
+          </button>
+          <button onClick={() => onDelete(news.id)} className="p-1 text-red-600 hover:text-red-800 transition-colors">
+            <FiTrash2 size={16} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// --- NewsList Component ---
+const NewsList = ({ newsList, onEdit, onDelete }) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {newsList.map((news) => (
+      <NewsCard key={news.id} news={news} onEdit={onEdit} onDelete={onDelete} />
+    ))}
+  </div>
+);
+
+// --- EditNewsDialog Component ---
+const EditNewsDialog = ({ isOpen, onClose, news, onSubmit }) => (
+  <Dialog isOpen={isOpen} onClose={onClose}>
+    <div className="flex justify-between items-center mb-4">
+      <h2 className="text-xl font-semibold">Edit News</h2>
+      <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+        <FiX size={24} />
+      </button>
+    </div>
+    <NewsForm onSubmit={onSubmit} initialData={news} isEdit={true} />
+  </Dialog>
+);
+
+// --- Dashboard Component ---
+export default function Dashboard() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+  const [newsList, setNewsList] = useState([]);
+  const [message, setMessage] = useState("");
+  const [editingNews, setEditingNews] = useState(null);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("forms");
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
-    fetchNews();
-  }, []);
+    if (status === "authenticated") fetchNews();
+  }, [status]);
 
   const fetchNews = async () => {
     try {
       const res = await fetch(`${backendUrl}/api/news`);
       const data = await res.json();
+      console.log("Received news data:", data); // Add this line
       setNewsList(data);
     } catch (error) {
       console.error("Error fetching news", error);
     }
   };
-
-  // Fungsi untuk menangani perubahan input
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = new FormData();
-    Object.keys(formData).forEach((key) => {
-      if (formData[key]) data.append(key, formData[key]);
-    });
-
+  const handleSubmit = async (formData) => {
     try {
+      const data = new FormData();
+      Object.keys(formData).forEach((key) => data.append(key, formData[key]));
+
       const res = await fetch(`${backendUrl}/api/news`, {
         method: "POST",
         body: data,
@@ -257,12 +250,6 @@ td img {
 
       if (result.success) {
         setMessage("News created successfully!");
-        setFormData({
-          title: "",
-          subtitle: "",
-          content: "",
-          image: null,
-        });
         fetchNews();
       } else {
         setMessage("Failed to create news: " + result.error);
@@ -271,6 +258,27 @@ td img {
       console.error("Error submitting form", error);
       setMessage("Error submitting form");
     }
+  };
+
+  const validateImageUrl = (url) => {
+    if (!url) return null;
+    
+    // Ensure URL is properly formatted
+    try {
+      const validUrl = new URL(url);
+      // If it's a relative URL, prepend the backend URL
+      if (url.startsWith('/uploads/')) {
+        return `${backendUrl}${url}`;
+      }
+      return url;
+    } catch {
+      return null;
+    }
+  };
+
+  const handleEdit = (news) => {
+    setEditingNews(news);
+    setIsEditDialogOpen(true);
   };
 
   const handleDelete = async (id) => {
@@ -294,180 +302,29 @@ td img {
     }
   };
 
-  const NewsForm = () => (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-6 bg-white p-6 rounded-lg shadow-sm"
-    >
-      <h2 className="text-xl font-semibold text-secondary mb-6">
-        Create New News
-      </h2>
+  const handleEditSubmit = async (formData) => {
+    try {
+      const data = new FormData();
+      Object.keys(formData).forEach((key) => data.append(key, formData[key]));
 
-      {message && (
-        <div
-          className={`p-4 rounded-md ${
-            message.includes("success")
-              ? "bg-green-50 text-green-700"
-              : "bg-red-50 text-red-700"
-          }`}
-        >
-          {message}
-        </div>
-      )}
+      const res = await fetch(`${backendUrl}/api/news/${editingNews.id}`, {
+        method: "PUT",
+        body: data,
+      });
+      const result = await res.json();
 
-      <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-dark mb-2">
-            Title
-          </label>
-          <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-accent rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-dark mb-2">
-            Subtitle
-          </label>
-          <input
-            type="text"
-            name="subtitle"
-            value={formData.subtitle}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-accent rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-dark mb-2">
-            Content
-          </label>
-          <textarea
-            name="content"
-            value={formData.content}
-            onChange={handleChange}
-            rows="4"
-            className="w-full px-3 py-2 border border-accent rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-            required
-          ></textarea>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-dark mb-2">
-            Image
-          </label>
-          <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-accent border-dashed rounded-md">
-            <div className="space-y-1 text-center">
-              <FiUpload className="mx-auto h-12 w-12 text-primary" />
-              <div className="flex text-sm text-dark">
-                <label className="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-secondary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary">
-                  <span>Upload an image</span>
-                  <input
-                    type="file"
-                    name="image"
-                    onChange={handleChange}
-                    className="sr-only"
-                    accept="image/*"
-                    required
-                  />
-                </label>
-              </div>
-              <p className="text-xs text-dark">PNG, JPG up to 5MB</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <button
-        type="submit"
-        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition"
-      >
-        Create News
-      </button>
-    </form>
-  );
-
-  const NewsList = () => (
-    <div className="bg-white p-6 rounded-lg shadow-sm mt-6">
-      <h2 className="text-xl font-semibold mb-6">News List</h2>
-      <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-accent">
-          <thead className="bg-accent-light">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-light uppercase tracking-wider">
-                Image
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-light uppercase tracking-wider">
-                Title
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-light uppercase tracking-wider">
-                Subtitle
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-light uppercase tracking-wider">
-                Content
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-light uppercase tracking-wider">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-accent">
-            {newsList.map((news) => (
-              <tr key={news.id}>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  {news.image_url && (
-                    <Image
-                      src={news.image_url}
-                      alt={news.title}
-                      width={80}
-                      height={80}
-                      className="rounded-md"
-                    />
-                  )}
-                </td>
-                <td className="px-6 py-4">{news.title}</td>
-                <td className="px-6 py-4">{news.subtitle}</td>
-                <td className="px-6 py-4">
-                  <div className="max-w-xs overflow-hidden text-ellipsis">
-                    {news.content}
-                  </div>
-                </td>
-                <td className="px-6 py-4">
-                  <div className="flex space-x-2">
-                    <Link
-                      href={`/dashboard/news/edit/${news.id}`}
-                      className="text-primary hover:text-secondary transition"
-                    >
-                      Edit
-                    </Link>
-                    <button
-                      onClick={() => handleDelete(news.id)}
-                      className="text-red-600 hover:text-red-800 transition"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-
-  useEffect(() => {
-    if (status === "loading") return;
-    if (!session) {
-      router.push("/v1/login");
+      if (result.success) {
+        setMessage("News updated successfully!");
+        setIsEditDialogOpen(false);
+        fetchNews();
+      } else {
+        setMessage("Failed to update news: " + result.error);
+      }
+    } catch (error) {
+      console.error("Error updating news", error);
+      setMessage("Error updating news");
     }
-  }, [session, status, router]);
+  };
 
   if (status === "loading" || !session) {
     return (
@@ -479,237 +336,129 @@ td img {
       </div>
     );
   }
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    setMobileMenuOpen(false);
-  };
-
-  const DataInputForm = () => (
-    <form className="space-y-6">
-      <div>
-        <label htmlFor="title" className="block text-sm font-medium text-dark">
-          Title
-        </label>
-        <input
-          type="text"
-          id="title"
-          className="mt-1 block w-full px-3 py-2 border border-accent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          placeholder="Enter title"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="description"
-          className="block text-sm font-medium text-dark"
-        >
-          Description
-        </label>
-        <textarea
-          id="description"
-          rows="4"
-          className="mt-1 block w-full px-3 py-2 border border-accent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          placeholder="Enter description"
-        ></textarea>
-      </div>
-
-      <div>
-        <label htmlFor="file" className="block text-sm font-medium text-dark">
-          Upload File
-        </label>
-        <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-accent border-dashed rounded-md">
-          <div className="space-y-1 text-center">
-            <FiUpload className="mx-auto h-12 w-12 text-primary" />
-            <div className="flex text-sm text-dark">
-              <label
-                htmlFor="file-upload"
-                className="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-secondary focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
-              >
-                <span>Upload a file</span>
-                <input
-                  id="file-upload"
-                  name="file-upload"
-                  type="file"
-                  className="sr-only"
-                />
-              </label>
-              <p className="pl-1">or drag and drop</p>
-            </div>
-            <p className="text-xs text-dark">PNG, JPG, PDF up to 10MB</p>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <button
-          type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  );
-
   return (
-    <div className="min-h-screen">
-      {/* Top Navigation Bar */}
-      <div className="navbar-fixed">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <button
-                className="inline-flex items-center justify-center p-2 rounded-md text-primary md:hidden"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-              </button>
-              <div className="flex items-center ml-4 md:ml-0">
-                <Image
-                  src="/img/medigrid.jpg"
-                  alt="Logo"
-                  width={100}
-                  height={100}
-                />
-                <div className="flex flex-col">
-                  <h1 className="text-xl font-semibold text-secondary">
-                    Dashboard
-                  </h1>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <button
-                onClick={() => signOut()}
-                className="inline-flex items-center px-3 py-1 border border-transparent text-sm rounded-md text-white bg-primary hover:bg-primary-dark transition"
-              >
-                <FiLogOut className="mr-2" />
-                Logout
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div className="flex min-h-screen bg-light">
       {/* Sidebar */}
-      <aside className={`sidebar-fixed ${mobileMenuOpen ? "active" : ""}`}>
-        <div className="h-full px-3 py-4">
-          <nav className="space-y-1">
-            <button
-              onClick={() => handleTabChange("upload")}
-              className={`flex items-center px-3 py-2 text-sm font-medium rounded-md w-full transition ${
-                activeTab === "upload"
-                  ? "bg-accent text-primary"
-                  : "text-dark hover:bg-accent-hover"
-              }`}
-            >
-              <FiUpload className="mr-3 h-5 w-5" />
-              Upload Profile Perusahaan
-            </button>
-            <button
-              onClick={() => handleTabChange("forms")}
-              className={`flex items-center px-3 py-2 text-sm font-medium rounded-md w-full transition ${
-                activeTab === "forms"
-                  ? "bg-accent text-primary"
-                  : "text-dark hover:bg-accent-hover"
-              }`}
-            >
-              <FiFileText className="mr-3 h-5 w-5" />
-              Upload Berita
-            </button>
-            <button
-              onClick={() => handleTabChange("data")}
-              className={`flex items-center px-3 py-2 text-sm font-medium rounded-md w-full transition ${
-                activeTab === "data"
-                  ? "bg-accent text-primary"
-                  : "text-dark hover:bg-accent-hover"
-              }`}
-            >
-              <FiDatabase className="mr-3 h-5 w-5" />
-              Dynamic Element
-            </button>
-            <button
-              onClick={() => handleTabChange("users")}
-              className={`flex items-center  px-3 py-2 text-sm font-medium rounded-md w-full transition ${
-                activeTab === "users"
-                  ? "bg-accent text-primary"
-                  : "text-dark hover:bg-accent-hover"
-              }`}
-            >
-              <FiSettings className="mr-3 h-5 w-5" />
-              Settings
-            </button>
-          </nav>
-          <Link
-            href="/"
-            className={`flex inset-y-1 items-center relative space-y-6 px-3 py-2 text-sm font-medium rounded-md w-full transition ${
-              activeTab === "forms"
-                ? "bg-accent text-primary"
-                : "text-dark hover:bg-accent-hover"
+      <aside
+        className={`fixed left-0 h-full w-64 bg-accent-light shadow-md p-4 transition-transform duration-300 ${
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0`}
+      >
+        <div className="mb-6">
+          <h2 className="text-xl font-bold text-primary">Dashboard</h2>
+        </div>
+        <nav className="space-y-4">
+          <button
+            onClick={() => handleTabChange("upload")}
+            className={`w-full text-left px-3 py-2 rounded-md transition ${
+              activeTab === "upload" ? "bg-accent text-primary" : "text-dark hover:bg-accent-hover"
             }`}
           >
-            Back
-          </Link>
-        </div>
+            <FiUpload className="inline mr-2 h-5 w-5" /> Profile 
+          </button>
+          <button
+            onClick={() => handleTabChange("forms")}
+            className={`w-full text-left px-3 py-2 rounded-md transition ${
+              activeTab === "forms" ? "bg-accent text-primary" : "text-dark hover:bg-accent-hover"
+            }`}
+          >
+            <FiFileText className="inline mr-2 h-5 w-5" /> Upload Blog
+          </button>
+          <button
+            onClick={() => handleTabChange("data")}
+            className={`w-full text-left px-3 py-2 rounded-md transition ${
+              activeTab === "data" ? "bg-accent text-primary" : "text-dark hover:bg-accent-hover"
+            }`}
+          >
+            <FiDatabase className="inline mr-2 h-5 w-5" /> Dynamic Element
+          </button>
+          <button
+            onClick={() => handleTabChange("users")}
+            className={`w-full text-left px-3 py-2 rounded-md transition ${
+              activeTab === "users" ? "bg-accent text-primary" : "text-dark hover:bg-accent-hover"
+            }`}
+          >
+            <FiSettings className="inline mr-2 h-5 w-5" /> Settings
+          </button>
+        </nav>
+        <Link
+          href="/"
+          className="block mt-6 px-3 py-2 text-sm font-medium rounded-md text-dark hover:bg-accent-hover"
+        >
+          Back
+        </Link>
       </aside>
 
-      {/* Main Content Area */}
-      <main className="main-content">
-        <div className="max-w-7xl mx-auto">
+      {/* Main Content */}
+      <div className="flex flex-col flex-1 ml-0 md:ml-64">
+        {/* Navbar */}
+        <nav className="fixed top-0 left-0 right-0 h-16 bg-white shadow-md flex items-center justify-between px-4 z-10 md:ml-64">
+          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+          <div className="flex items-center space-x-4">
+            <Image src="/img/medigrid.jpg" alt="Logo" width={100} height={100} className="rounded-full" />
+            <span className="text-lg font-semibold text-secondary">
+              Welcome, {session.user.name}
+            </span>
+          </div>
+          <button
+            onClick={() => signOut()}
+            className="px-6 py-3 bg-primary text-white rounded-md hover:bg-dark transition flex items-center"
+          >
+            <FiLogOut className="mr-2" /> Logout
+          </button>
+        </nav>
+  
+
+
+      {/* Main Content */}
+      <main className="mt-16 p-4">
+      <div className="max-w-7xl mx-auto">
           {activeTab === "upload" && (
             <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-primary">
-              <h2 className="text-lg font-semibold text-secondary mb-6">
-                Upload Data
-              </h2>
-              <DataInputForm />
+              <h2 className="text-lg font-semibold text-secondary mb-6">Upload Data</h2>
             </div>
           )}
 
-          {/* input data berita */}
           {activeTab === "forms" && (
             <div className="space-y-6">
-              <NewsForm />
-              <NewsList />
+              {/* Form untuk membuat berita baru */}
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h2 className="text-xl font-semibold text-secondary mb-6">Create New News</h2>
+                <NewsForm onSubmit={handleSubmit} />
+              </div>
+
+              {/* Daftar berita dalam grid */}
+              <NewsList newsList={newsList} onEdit={handleEdit} onDelete={handleDelete} />
+
+              {/* Dialog untuk mengedit berita */}
+              <EditNewsDialog
+                isOpen={isEditDialogOpen}
+                onClose={() => setIsEditDialogOpen(false)}
+                news={editingNews}
+                onSubmit={handleEditSubmit}
+              />
             </div>
           )}
 
           {activeTab === "data" && (
             <div className="bg-white shadow-sm rounded-lg p-6">
-              <h2 className="text-lg font-semibold text-gray-800 mb-6">
-                View Data
-              </h2>
-              <p className="text-gray-600">
-                Data view will be implemented here.
-              </p>
+              <h2 className="text-lg font-semibold text-gray-800 mb-6">View Data</h2>
+              <p className="text-gray-600">Data view will be implemented here.</p>
             </div>
           )}
 
-          {/* Users */}
           {activeTab === "users" && (
             <div className="bg-white shadow-sm rounded-lg p-6">
-              <h2 className="text-lg font-semibold text-gray-800 mb-6">
-                User Management
-              </h2>
-              <p className="text-gray-600">
-                User management interface will be implemented here.
-              </p>
-            </div>
-          )}
-
-          {/* Settings */}
-          {activeTab === "settings" && (
-            <div className="bg-white shadow-sm rounded-lg p-6">
-              <h2 className="text-lg font-semibold text-gray-800 mb-6">
-                Settings
-              </h2>
-              <p className="text-gray-600">
-                Settings interface will be implemented here.
-              </p>
+              <h2 className="text-lg font-semibold text-gray-800 mb-6">User Management</h2>
+              <p className="text-gray-600">User management interface will be implemented here.</p>
             </div>
           )}
         </div>
       </main>
     </div>
+    </div>
+    
   );
 }

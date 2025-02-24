@@ -97,4 +97,24 @@
   }
 
 
+  /* Custom class untuk menampilkan konten penuh hingga batas tertentu, lalu menambahkan ellipsis */
+.content-truncate {
+  position: relative;
+  max-height: 6rem; /* Sesuaikan dengan tinggi card yang diinginkan */
+  overflow: hidden;
+}
+
+/* Pseudo-element untuk efek fade-out dan ellipsis */
+.content-truncate::after {
+  content: '...';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 1rem;
+  background: linear-gradient(to right, transparent, var(--color-light));
+  color: var(--color-dark);
+}
+
+
+
   /* tailwind base */

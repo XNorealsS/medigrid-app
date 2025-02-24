@@ -155,7 +155,8 @@
 }
 
 .card1,
-.card2 {
+.card2,
+.card3 {
   width: 17%;
   height: 270px;
   display: flex;
@@ -164,12 +165,17 @@
 }
 
 .card1 {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent-1);
   border-radius: 7px 7px 0px 0px;
 }
 
 .card2 {
-  background-color: var(--color-accent-2);
+  background-color: var(--color-dark-1);
+  border-radius: 7px 7px 0px 0px;
+}
+
+.card3 {
+  background-color: var(--color-primary);
   border-radius: 7px 7px 0px 0px;
 }
 
@@ -260,7 +266,7 @@
 
 .fitur-card {
   border: 2px solid var(--color1);
-  height: 290px;
+  height: auto;
   width: 17%;
 }
 
@@ -274,5 +280,18 @@
   font-weight: bold;
   color: var(--color3);
 }
+
+.fitur-content {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.fitur-content p {
+  display: flex;
+  padding: 0.5rem;
+  font-weight: 600;
+  gap: 5px;
+}
+
 
 

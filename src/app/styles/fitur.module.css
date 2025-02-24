@@ -11,6 +11,7 @@
   background-color: var(--color-background);
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 /* Navigation */
@@ -139,6 +140,7 @@
   background-color: var(--color2);
   text-align: center;
   padding: 40px;
+  font-size: 23px;
 }
 
 .layanan-isi {

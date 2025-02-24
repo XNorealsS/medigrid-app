@@ -1,14 +1,25 @@
+"use client";
 import React from 'react'
 import Image from "next/image";
 import Link from "next/link";
 import stylesh from '../styles/blog.module.css';
-import Footer from "../components/footer"; 
-
+import Footer from "../components/footer";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import "aos/dist/aos.css"
 
 
 
 const blog = () => {
-
+     useEffect(() => {
+        AOS.init({
+          duration: 500,
+          easing: "ease-in-out",
+          once:   false,
+          mirror: false, 
+          offset: 200,
+        });
+      }, []);
   return (
     <>
      <nav className={stylesh["first-nav"]}>
@@ -111,7 +122,12 @@ const blog = () => {
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
-                <div className={stylesh['card1']}>
+                <div className={stylesh['card1']} 
+                data-aos="fade-right"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="800"
+                >
                 <Image src="/img/th.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
@@ -128,7 +144,12 @@ const blog = () => {
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
-                <div className={stylesh['card1']}>
+                <div className={stylesh['card1']}
+                data-aos="fade-right"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="500"
+                >
                 <Image src="/img/pornografi.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
@@ -145,7 +166,12 @@ const blog = () => {
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
-                <div className={stylesh['card1']}>
+                <div className={stylesh['card1']}
+                data-aos="fade-left"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="500"
+                >
                 <Image src="/img/Stop Stunting.jpg" alt="Logo" width={400} height={100} />
 
                     <div className={stylesh['card-body']}>
@@ -162,7 +188,12 @@ const blog = () => {
                         <small className={stylesh['text-muted']}>Last updated 3 mins ago</small>
                     </div>
                 </div>
-                <div className={stylesh['card1']}>
+                <div className={stylesh['card1']}
+                data-aos="fade-left"
+                data-aos-anchor="#example-anchor"
+                data-aos-offset="500"
+                data-aos-duration="800"
+                >
                 <Image src="/img/th (1).jpg" alt="Logo" width={400} height={100} />
                     <div className={stylesh['card-body']}>
                         <h6>

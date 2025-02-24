@@ -6,13 +6,13 @@ import Footer from "./components/footer";
 import styles from "./styles/home.module.css";
 import { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 500, // Durasi animasi dalam milidetik (1000ms = 1 detik)
-      easing: "ease-in-out", // Efek transisi
+      duration: 500,
+      easing: "ease-in-out",
       once:   false,
       mirror: false, 
       offset: 200,

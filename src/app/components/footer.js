@@ -90,10 +90,7 @@ function footer() {
                     </div>
                     <div className={stylesx['menu-footer']}>
                         <div className={stylesx['list-menu']}>
-                            <Link href=""><i className='bx bx-location-plus'></i></Link>
-                            <Link href=""><i className='bx bxs-phone'></i></Link>
-                            <Link href=""><i className='bx bxs-contact' ></i></Link>
-                            <Link href=""><i className='bx bx-message-rounded-detail'></i></Link>
+                        
                         </div>
                     </div>
                     <div className={stylesx['maps']}>

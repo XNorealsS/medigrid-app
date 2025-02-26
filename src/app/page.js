@@ -79,13 +79,13 @@ export default function Home() {
 
         <div className={styles["header-1"]}>
           <h1 className={styles["head-1"]}>MEDIGRID</h1>
-          <h1 className={styles["head-2"]}>
+          <h2 className={styles["head-2"]}>
               ELECTRONIC{" "}
             <span className={styles["highlight-text"]}>
               {" "}
               MEDICAL RECORD
             </span>
-          </h1>
+          </h2>
 
           <p className={styles["lorem"]} >
             MediGrid adalah sebuah aplikasi digital berbasis web yang dirancang untuk membantu klinik dan fasilitas kesehatan dalam mengelola operasional secara lebih efisien dan modern. MediGrid hadir sebagai solusi inovatif untuk mendukung digitalisasi layanan kesehatan di Indonesia.
@@ -95,7 +95,7 @@ export default function Home() {
           </Link>
         </div>
         <div className={styles["Logo-kementrian"]}>
-          <h2>Terintegrasi SATUSEHAT, BPJS, PSE Kominfo</h2>
+          <h3>Terintegrasi SATUSEHAT, BPJS, PSE Kominfo</h3>
           <div className={styles["logo-kemen"]}>
             <div className={styles["satusehat"]}>
               <Image
@@ -103,7 +103,8 @@ export default function Home() {
                 alt="Logo"
                 width={140}
                 height={100}
-                data-aos="fade-right"
+                data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"
               />
             </div>
             <div className={styles["bpjs"]}>
@@ -113,6 +114,7 @@ export default function Home() {
               width={140} 
               height={100} 
               data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
               />
             </div>
             <div className={styles["pse"]}>
@@ -121,7 +123,8 @@ export default function Home() {
               alt="Logo"
               width={140} 
               height={100} 
-               data-aos="fade-left"
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
               />
             </div>
           </div>
@@ -155,14 +158,17 @@ export default function Home() {
         </header>
         <div className={styles["card-berita"]}>
           <div className={styles["card-group"]}>
-            <div className={styles["card1"]} data-aos="fade-right">
+            <div 
+              className={styles["card1"]}
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
               <Image
                 src="/img/kopi.jpg"
                 alt="Logo"
                 width={400}
                 height={100}
                 className={styles['image']}
-
               />
               <div className={styles["card-body"]}>
                 <h6>
@@ -183,8 +189,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={styles["card1"]} data-aos="fade-down">
-              <Image src="/img/th (1).jpg" alt="Logo" width={400} height={100} />
+            <div
+              className={styles["card1"]} 
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+             >
+              <Image 
+              src="/img/th (1).jpg"
+               alt="Logo" 
+               width={400} 
+               height={100} 
+               />
 
               <div className={styles["card-body"]}>
                 <h6>
@@ -203,8 +218,14 @@ export default function Home() {
                 </small>
               </div>
             </div>
-            <div className={styles["card1"]} data-aos="fade-left">
-              <Image src="/img/th.jpg" alt="Logo" width={400} height={100} />
+            <div className={styles["card1"]} data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+              <Image 
+              src="/img/th.jpg"
+              alt="Logo"
+              width={400}
+              height={100}
+      
+              />
               <div className={styles["card-body"]}>
                 <h6>
                   <span>indodev</span>

@@ -66,16 +66,14 @@ const Harga = () => {
                             <h3>Paket Premium</h3>
                             <p><strong>Rp <span>1.000.000</span></strong>/bln</p>
                         </div>
-
-
-                         <button className={stylesx['btn']}>Berlangganan Sekarang</button>
+                            <button className={stylesx['btn']}>Berlangganan Sekarang</button>
                         </div>
                     </div>
                 </div>
                     <div className={stylesx['list-fitur']}>
                         <div className={stylesx['fitur-card']}>
                             <div className={stylesx['judul']}>
-                                <h1>Fitur</h1>
+                                <span>Fitur</span>
                             </div>
                         <div className={stylesx['fitur-content']}>
                             <ul>
@@ -89,7 +87,7 @@ const Harga = () => {
                     </div>
                     <div className={stylesx['fitur-card']}>
                         <div className={stylesx['judul']}>
-                            <h1>Fitur</h1>
+                            <span>Fitur</span>
                         </div>
                             <div className={stylesx['fitur-content']}>
                                <ul>
@@ -105,7 +103,7 @@ const Harga = () => {
                     </div>
                         <div className={stylesx['fitur-card']}>
                             <div className={stylesx['judul']}>
-                                <h1>Fitur</h1>
+                                <span>Fitur</span>
                             </div>
                             <div className={stylesx['fitur-content']}>
                                 <ul>

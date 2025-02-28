@@ -4,11 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "./components/footer";
 import styles from "./styles/home.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import FaqTab from "./components/FaqTab";
 
 export default function Home() {
+  const [showFAQ, setShowFAQ] = useState(false);
+
+  const handleScrollToFooter = () => {
+    document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
+  };
+  
   useEffect(() => {
     AOS.init({
       duration: 500,
@@ -25,12 +32,15 @@ export default function Home() {
           <p>
             IND <span></span>
           </p>
-          <Link href="">FAQ</Link>
+          <button onClick={() => setShowFAQ(true)}>FAQ</button>
         </div>
         <div className={styles["contact1"]}>
-          <Link href="">Contact Us</Link>
+        <button onClick={handleScrollToFooter}>Contact Us</button>
         </div>
       </nav>
+
+      {showFAQ && <FaqTab onClose={() => setShowFAQ(false)} />}
+
       <section className={styles["container"]}>
         <nav className={styles["second-nav"]}>
           <div className={styles["navbar"]}>
@@ -312,6 +322,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+     
 
       <Footer />
     </>

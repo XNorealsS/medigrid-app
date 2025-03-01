@@ -10,6 +10,7 @@ import "aos/dist/aos.css";
 import FaqTab from "./components/FaqTab";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [showFAQ, setShowFAQ] = useState(false);
 
   const handleScrollToFooter = () => {
@@ -40,6 +41,43 @@ export default function Home() {
       </nav>
 
       {showFAQ && <FaqTab onClose={() => setShowFAQ(false)} />}
+
+      <nav className={styles['mobileNav']}>
+        <div className={styles['hamburger']} onClick={() => setMenuOpen(true)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className={styles['logo-kecil']}>
+          <Link href="/">
+            <Image src="/img/medigrid.jpg" alt="Logo" width={140} height={100} />
+          </Link>
+        </div>
+      </nav>
+
+      {/* Side Menu */}
+      <div className={`${styles.sideMenu} ${menuOpen ? styles.open : ""}`}>
+        <div className={styles.closeBtn} onClick={() => setMenuOpen(false)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <ul className={styles.navList}>
+          <li>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Tentang Kami</Link>
+          </li>
+          <li>
+            <Link href="/fitur" onClick={() => setMenuOpen(false)}>Fitur & Layanan</Link>
+          </li>
+          <li>
+            <Link href="/harga" onClick={() => setMenuOpen(false)}>Harga</Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          </li>
+        </ul>
+      </div>
+        
 
       <section className={styles["container"]}>
         <nav className={styles["second-nav"]}>
@@ -82,6 +120,7 @@ export default function Home() {
           </div>
         </nav>
       </section>
+
       <section className={styles["main"]}>
         <div className={styles["obat"]}></div>
         <div className={styles["obat2"]}></div>

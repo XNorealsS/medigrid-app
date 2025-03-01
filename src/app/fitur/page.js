@@ -46,6 +46,10 @@ const fitur = () => {
     </section>
 
     <section className="main">
+            <div className={stylesf["obat"]}></div>
+            <div className={stylesf["obat2"]}></div>
+
+
         <div className={stylesf['content']}>
             <aside className={stylesf['side']}>
                 <header className={stylesf['header']}>

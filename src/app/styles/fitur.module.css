@@ -1,3 +1,7 @@
+
+
+
+
 .container *, 
 .container *::before,
 .container *::after {
@@ -6,7 +10,6 @@
   box-sizing: border-box;
 }
 
-/* Layout Components */
 .container {
   background-color: var(--color-background);
   position: sticky;
@@ -14,7 +17,7 @@
   z-index: 1;
 }
 
-/* Navigation */
+
 .first-nav {
   display: flex;
   justify-content: space-between;
@@ -54,7 +57,7 @@
 }
 
 
-/* Navigation Hover Effects */
+/* Navigation Hover efek */
 .hove {
   position: relative;
   padding: 19px;
@@ -96,10 +99,65 @@
 .main {
   background-color: var(--color3);
   height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.obat {
+  position: absolute;
+  width: 25em;
+  height: 27em;
+  background-color: var(--color2);
+  right: 0;
+  top: 30%;
+  animation: masuk 3s normal;
+  z-index: -1;
+}
+
+@keyframes masuk {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+}
+
+.obat2 {
+  position: absolute;
+  width: 25em;
+  height: 27em;
+  background-color: var(--color1);
+  right: 0;
+  top: 30%;
+  transform: translateX(-100%);
+  border-radius: 18em 13px 13px 18em;
+  animation: masuk2 1s normal ease-in-out;
+  z-index: -1;
+}
+
+@keyframes masuk2 {
+  0%{
+    transform: translateX(50%);
+    opacity: 0;
+
+  }
+  10%{
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 1;
+  }
+
 }
 
 .content {
-  background-color: var(--color3) ;
   height: 87vh;
   align-content: center;
 }
@@ -112,6 +170,7 @@
 .header {
   font-size: 1.9rem;
   font-weight: bold;
+  
 }
 
 .teks {

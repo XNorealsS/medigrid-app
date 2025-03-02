@@ -50,9 +50,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    max-width: 1600px;
-  }
   .hamburger {
     display: contents;
   }
@@ -60,6 +57,10 @@
   .second-nav {
     display: none;
   }
+
+  .logo-kecil {
+    display: block;
+  }  
 }
 
 .container {
@@ -350,6 +351,7 @@ gap: 8em
   .kotak {
     display: none;
   }
+  
 .main {
   height: auto;
   flex-direction: column;
@@ -365,6 +367,9 @@ gap: 8em
 
 .head-1,
 .head-2 {
+  font-size: 24px;
+}
+.highlight-text {
   font-size: 24px;
 }
 
@@ -697,26 +702,26 @@ object-fit: cover;
 
 @media (max-width: 768px) {
   .testimoni {
-    height: auto; /* Menyesuaikan tinggi berdasarkan isi */
+    height: 160vh;
     padding: 20px;
   }
   .header-testi {
     padding: 20px 10px;
     font-size: 1.2rem;
   }
-  /* Ubah layout container utama agar tersusun secara vertikal */
+
   .back {
     display: block;
     position: relative;
   }
-  /* Pindahkan gambar (jika diperlukan) ke posisi tengah */
+
   .gambar {
-    position: relative;
+    position: absolute;
     left: 30%;
     transform: translateX(-50%);
-    margin-bottom: 20px;
+    top: 0;
   }
-  /* Ubah wrapper agar card tersusun vertikal */
+
   .testimoni-wrapper {
     display: flex;
     flex-direction: column;
@@ -729,12 +734,12 @@ object-fit: cover;
   .testi-card3 {
     position: relative;
     left: 0;
-    top: 0;
+    top: 180px;
     right: 0;
     margin: 10px 0;
-    max-width: 90%; /* Card memenuhi 90% lebar layar */
-    text-align: center; /* Teks di tengah */
-    flex-direction: column; /* Ubah susunan dari baris menjadi kolom */
+    max-width: 90%; 
+    text-align: center;
+    flex-direction: column; 
     gap: 10px;
   }
   /* Atur ulang margin gambar di dalam card */

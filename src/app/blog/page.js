@@ -9,6 +9,8 @@ import "aos/dist/aos.css"
 
 
 const Blog = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -52,7 +54,42 @@ const Blog = () => {
           <Link href="">Contact Us</Link>
         </div>
       </nav>
+      <nav className={stylesh['mobileNav']}>
+        <div className={stylesh['hamburger']} onClick={() => setMenuOpen(true)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className={stylesh['logo-kecil']}>
+          <Link href="/">
+            <Image src="/img/medigrid.jpg" alt="Logo" width={140} height={100} />
+          </Link>
+        </div>
+      </nav>
 
+      {/* Side Menu */}
+      <div className={`${stylesh['sideMenu']} ${menuOpen ? stylesh['open'] : ""}`}>
+        <div className={stylesh['closeBtn']} onClick={() => setMenuOpen(false)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <ul className={stylesh['navList']}>
+          <li>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Tentang Kami</Link>
+          </li>
+          <li>
+            <Link href="/fitur" onClick={() => setMenuOpen(false)}>Fitur & Layanan</Link>
+          </li>
+          <li>
+            <Link href="/harga" onClick={() => setMenuOpen(false)}>Harga</Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          </li>
+        </ul>
+      </div>
+      
       <section className={stylesh["container"]}>
         <nav className={stylesh["second-nav"]}>
           <div className={stylesh["navbar"]}>
@@ -115,14 +152,6 @@ const Blog = () => {
 </div>
 
         )}
-
-        <div className={stylesh["button"]}>
-          <button className={stylesh["btn"]}>Prev</button>
-          <button className={stylesh["btn"]}>1</button>
-          <button className={stylesh["btn"]}>2</button>
-          <button className={stylesh["btn"]}>....</button>
-          <button className={stylesh["btn"]}>Next</button>
-        </div>
       </section>
 
       <Footer />

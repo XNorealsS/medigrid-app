@@ -4,11 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import Footer from "../components/footer";
 import stylesf from '../styles/fitur.module.css';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const fitur = () => {
+      const [menuOpen, setMenuOpen] = useState(false);
+
      useEffect(() => {
         AOS.init({
           duration: 500,
@@ -29,6 +31,43 @@ const fitur = () => {
                 <Link href="">Contact Us</Link>
             </div>
         </nav>
+
+        <nav className={stylesf['mobileNav']}>
+        <div className={stylesf['hamburger']} onClick={() => setMenuOpen(true)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className={stylesf['logo-kecil']}>
+          <Link href="/">
+            <Image src="/img/medigrid.jpg" alt="Logo" width={140} height={100} />
+          </Link>
+        </div>
+      </nav>
+
+      {/* Side Menu */}
+      <div className={`${stylesf['sideMenu']} ${menuOpen ? stylesf['open'] : ""}`}>
+        <div className={stylesf['closeBtn']} onClick={() => setMenuOpen(false)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <ul className={stylesf['navList']}>
+          <li>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Tentang Kami</Link>
+          </li>
+          <li>
+            <Link href="/fitur" onClick={() => setMenuOpen(false)}>Fitur & Layanan</Link>
+          </li>
+          <li>
+            <Link href="/harga" onClick={() => setMenuOpen(false)}>Harga</Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          </li>
+        </ul>
+      </div>
+
   <section className={stylesf['container']}>
         <nav className={stylesf['second-nav']}>
             <div className={stylesf['navbar']}>
@@ -44,6 +83,9 @@ const fitur = () => {
             </div>
         </nav>
     </section>
+
+
+
 
     <section className="main">
             <div className={stylesf["obat"]}></div>

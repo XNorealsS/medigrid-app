@@ -56,13 +56,13 @@ export default function Home() {
       </nav>
 
       {/* Side Menu */}
-      <div className={`${styles.sideMenu} ${menuOpen ? styles.open : ""}`}>
+      <div className={`${styles.sideMenu} ${menuOpen ? styles['open'] : ""}`}>
         <div className={styles.closeBtn} onClick={() => setMenuOpen(false)}>
           <svg width="30" height="30" viewBox="0 0 24 24">
             <path d="M6 6l12 12M18 6l-12 12" stroke="black" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </div>
-        <ul className={styles.navList}>
+        <ul className={styles['navList']}>
           <li>
             <Link href="/" onClick={() => setMenuOpen(false)}>Tentang Kami</Link>
           </li>

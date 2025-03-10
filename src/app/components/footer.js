@@ -105,6 +105,9 @@ function footer() {
                         </div>
                     </div>
             </div>
+                {/* <div className={stylesx['copyright']}>
+                    <p>&copy; Medigrid app</p>
+                </div> */}
     </footer>  
   )
 }

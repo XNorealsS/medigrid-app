@@ -12,6 +12,7 @@ import FaqTab from "./components/FaqTab";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showFAQ, setShowFAQ] = useState(false);
+  
 
   const handleScrollToFooter = () => {
     document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
@@ -31,9 +32,11 @@ export default function Home() {
       <nav className={styles["first-nav"]}>
         <div className={styles["bahasa-faq"]}>
           <p>
-            IND <span></span>
+            IND <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 36 36"><path fill="#dc1f26" d="M32 5H4a4 4 0 0 0-4 4v9h36V9a4 4 0 0 0-4-4"/><path fill="#eee" d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4v-9h36z"/></svg></span>
           </p>
-          <button onClick={() => setShowFAQ(true)}>FAQ</button>
+          <button onClick={() => setShowFAQ(true)}>
+            FAQ <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 26 26"><path fill="currentColor" d="M13 0c-1.7 0-3 1.3-3 3v6c0 1.7 1.3 3 3 3h6l4 4v-4c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3zm4.188 3h1.718l1.688 6h-1.5l-.407-1.5h-1.5L16.813 9H15.5zM18 4c-.1.4-.212.888-.313 1.188l-.28 1.312h1.187l-.282-1.313C18.113 4.888 18 4.4 18 4M3 10c-1.7 0-3 1.3-3 3v6c0 1.7 1.3 3 3 3v4l4-4h6c1.7 0 3-1.3 3-3v-6h-3c-1.9 0-3.406-1.3-3.906-3zm4.594 2.906c1.7 0 2.5 1.4 2.5 3c0 1.4-.481 2.288-1.281 2.688c.4.2.874.306 1.374.406l-.374 1c-.7-.2-1.426-.512-2.126-.813c-.1-.1-.275-.093-.375-.093C6.112 18.994 5 18 5 16c0-1.7.994-3.094 2.594-3.094m0 1.094c-.8 0-1.188.9-1.188 2c0 1.2.388 2 1.188 2s1.218-.9 1.218-2s-.418-2-1.218-2"/></svg></span>
+          </button>
         </div>
         <div className={styles["contact1"]}>
         <button onClick={handleScrollToFooter}>Contact Us</button>
@@ -44,9 +47,7 @@ export default function Home() {
 
       <nav className={styles['mobileNav']}>
         <div className={styles['hamburger']} onClick={() => setMenuOpen(true)}>
-          <svg width="30" height="30" viewBox="0 0 24 24">
-            <path d="M3 6h18M3 12h18M3 18h18" stroke="black" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
         </div>
         <div className={styles['logo-kecil']}>
           <Link href="/">
@@ -56,11 +57,9 @@ export default function Home() {
       </nav>
 
       {/* Side Menu */}
-      <div className={`${styles.sideMenu} ${menuOpen ? styles['open'] : ""}`}>
-        <div className={styles.closeBtn} onClick={() => setMenuOpen(false)}>
-          <svg width="30" height="30" viewBox="0 0 24 24">
-            <path d="M6 6l12 12M18 6l-12 12" stroke="black" strokeWidth="2" strokeLinecap="round" />
-          </svg>
+      <div className={`${styles['sideMenu']} ${menuOpen ? styles['open'] : ""}`}>
+        <div className={styles['closeBtn']} onClick={() => setMenuOpen(false)}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5L12 5L19 5M5 12H19M5 19L12 19L19 19"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5 5L12 5L19 5M5 12H19M5 19L12 19L19 19;M5 5L12 12L19 5M12 12H12M5 19L12 12L19 19"/></path></svg>
         </div>
         <ul className={styles['navList']}>
           <li>

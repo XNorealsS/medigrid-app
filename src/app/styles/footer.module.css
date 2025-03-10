@@ -1,12 +1,13 @@
+
+
 .kuning {
   background-color: var(--color1);
   height: 5vh;
 }
 
 @media screen and (max-width: 786px) {
-
+  
 }
-
 
 .footer-body{
     background-color: var(--color2);
@@ -89,7 +90,7 @@
   }
   
   .kami a:hover{
-    transform: scale(1.1);
+    transform: scale(1.0);
     transition: all 0.3s ease;
   }
 
@@ -148,7 +149,7 @@
   @media screen and (max-width: 768px) {
     .footer-body {
       height: auto;
-      padding: 20px;
+      /* padding: 20px; */
       display: flex;
       flex-direction: column;
       position: relative;
@@ -223,3 +224,16 @@
   }
 
 */
+/* 
+.copyright{
+  border-top: 2px solid var(--color3);
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 10%;
+  color: var(--color4);
+}
+
+.copyright p {
+  margin-top: 24px;
+} */

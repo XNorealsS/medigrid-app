@@ -1,8 +1,9 @@
 .mobileNav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
+  justify-content: space-around;
+  /* padding: 0.5rem 1rem; */
+  gap: 73px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -88,12 +89,24 @@
   color: var(--color-light-1);
 }
 
+
 .bahasa-faq {
   display: flex;
+  align-items: center;
   gap: 29px;
 }
+.bahasa-faq p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bahasa-faq button {
+  color: var(--color6);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 
-.bahasa-faq a,
 .contact1 a {
   color: var(--color-light-1);
   text-decoration: none;
@@ -101,7 +114,7 @@
 
 .second-nav {
   background-color: var(--color-background);
-  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.605);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.605);
 }
 
 .navbar {

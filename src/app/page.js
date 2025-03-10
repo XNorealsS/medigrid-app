@@ -4,11 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "./components/footer";
 import styles from "./styles/home.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import FaqTab from "./components/FaqTab";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showFAQ, setShowFAQ] = useState(false);
+
+  const handleScrollToFooter = () => {
+    document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
+  };
+  
   useEffect(() => {
     AOS.init({
       duration: 500,
@@ -25,12 +33,52 @@ export default function Home() {
           <p>
             IND <span></span>
           </p>
-          <Link href="">FAQ</Link>
+          <button onClick={() => setShowFAQ(true)}>FAQ</button>
         </div>
         <div className={styles["contact1"]}>
-          <Link href="">Contact Us</Link>
+        <button onClick={handleScrollToFooter}>Contact Us</button>
         </div>
       </nav>
+
+      {showFAQ && <FaqTab onClose={() => setShowFAQ(false)} />}
+
+      <nav className={styles['mobileNav']}>
+        <div className={styles['hamburger']} onClick={() => setMenuOpen(true)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className={styles['logo-kecil']}>
+          <Link href="/">
+            <Image src="/img/medigrid.jpg" alt="Logo" width={140} height={100} />
+          </Link>
+        </div>
+      </nav>
+
+      {/* Side Menu */}
+      <div className={`${styles.sideMenu} ${menuOpen ? styles['open'] : ""}`}>
+        <div className={styles.closeBtn} onClick={() => setMenuOpen(false)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <ul className={styles['navList']}>
+          <li>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Tentang Kami</Link>
+          </li>
+          <li>
+            <Link href="/fitur" onClick={() => setMenuOpen(false)}>Fitur & Layanan</Link>
+          </li>
+          <li>
+            <Link href="/harga" onClick={() => setMenuOpen(false)}>Harga</Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          </li>
+        </ul>
+      </div>
+        
+
       <section className={styles["container"]}>
         <nav className={styles["second-nav"]}>
           <div className={styles["navbar"]}>
@@ -72,6 +120,7 @@ export default function Home() {
           </div>
         </nav>
       </section>
+
       <section className={styles["main"]}>
         <div className={styles["obat"]}></div>
         <div className={styles["obat2"]}></div>
@@ -79,13 +128,13 @@ export default function Home() {
 
         <div className={styles["header-1"]}>
           <h1 className={styles["head-1"]}>MEDIGRID</h1>
-          <h1 className={styles["head-2"]}>
+          <h2 className={styles["head-2"]}>
               ELECTRONIC{" "}
             <span className={styles["highlight-text"]}>
               {" "}
               MEDICAL RECORD
             </span>
-          </h1>
+          </h2>
 
           <p className={styles["lorem"]} >
             MediGrid adalah sebuah aplikasi digital berbasis web yang dirancang untuk membantu klinik dan fasilitas kesehatan dalam mengelola operasional secara lebih efisien dan modern. MediGrid hadir sebagai solusi inovatif untuk mendukung digitalisasi layanan kesehatan di Indonesia.
@@ -95,7 +144,7 @@ export default function Home() {
           </Link>
         </div>
         <div className={styles["Logo-kementrian"]}>
-          <h2>Terintegrasi SATUSEHAT, BPJS, PSE Kominfo</h2>
+          <h3>Terintegrasi SATUSEHAT, BPJS, PSE Kominfo</h3>
           <div className={styles["logo-kemen"]}>
             <div className={styles["satusehat"]}>
               <Image
@@ -103,7 +152,8 @@ export default function Home() {
                 alt="Logo"
                 width={140}
                 height={100}
-                data-aos="fade-right"
+                data-aos="fade-up"
+                data-aos-anchor-placement="bottom-bottom"
               />
             </div>
             <div className={styles["bpjs"]}>
@@ -113,6 +163,7 @@ export default function Home() {
               width={140} 
               height={100} 
               data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
               />
             </div>
             <div className={styles["pse"]}>
@@ -121,7 +172,8 @@ export default function Home() {
               alt="Logo"
               width={140} 
               height={100} 
-               data-aos="fade-left"
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
               />
             </div>
           </div>
@@ -155,14 +207,17 @@ export default function Home() {
         </header>
         <div className={styles["card-berita"]}>
           <div className={styles["card-group"]}>
-            <div className={styles["card1"]} data-aos="fade-right">
+            <div 
+              className={styles["card1"]}
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+            >
               <Image
                 src="/img/kopi.jpg"
                 alt="Logo"
                 width={400}
                 height={100}
                 className={styles['image']}
-
               />
               <div className={styles["card-body"]}>
                 <h6>
@@ -183,8 +238,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={styles["card1"]} data-aos="fade-down">
-              <Image src="/img/th (1).jpg" alt="Logo" width={400} height={100} />
+            <div
+              className={styles["card1"]} 
+              data-aos="fade-up"
+              data-aos-anchor-placement="bottom-bottom"
+             >
+              <Image 
+              src="/img/th (1).jpg"
+               alt="Logo" 
+               width={400} 
+               height={100} 
+               />
 
               <div className={styles["card-body"]}>
                 <h6>
@@ -203,8 +267,14 @@ export default function Home() {
                 </small>
               </div>
             </div>
-            <div className={styles["card1"]} data-aos="fade-left">
-              <Image src="/img/th.jpg" alt="Logo" width={400} height={100} />
+            <div className={styles["card1"]} data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+              <Image 
+              src="/img/th.jpg"
+              alt="Logo"
+              width={400}
+              height={100}
+      
+              />
               <div className={styles["card-body"]}>
                 <h6>
                   <span>indodev</span>
@@ -291,6 +361,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+     
 
       <Footer />
     </>

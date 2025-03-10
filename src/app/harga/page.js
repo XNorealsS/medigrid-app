@@ -1,10 +1,14 @@
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
 import stylesx from "../styles/harga.module.css";
 import Footer from "../components/footer";
-
+import { useEffect, useState } from "react";
 
 const Harga = () => {
+      const [menuOpen, setMenuOpen] = useState(false);
+    
     return (
         <>
         <nav className={stylesx["first-nav"]}>
@@ -16,6 +20,43 @@ const Harga = () => {
                 <Link href="">Contact Us</Link>
             </div>
         </nav>
+
+        <nav className={stylesx['mobileNav']}>
+        <div className={stylesx['hamburger']} onClick={() => setMenuOpen(true)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <div className={stylesx['logo-kecil']}>
+          <Link href="/">
+            <Image src="/img/medigrid.jpg" alt="Logo" width={140} height={100} />
+          </Link>
+        </div>
+      </nav>
+
+      {/* Side Menu */}
+      <div className={`${stylesx['sideMenu']} ${menuOpen ? stylesx['open'] : ""}`}>
+        <div className={stylesx['closeBtn']} onClick={() => setMenuOpen(false)}>
+          <svg width="30" height="30" viewBox="0 0 24 24">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="black" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </div>
+        <ul className={stylesx['navList']}>
+          <li>
+            <Link href="/" onClick={() => setMenuOpen(false)}>Tentang Kami</Link>
+          </li>
+          <li>
+            <Link href="/fitur" onClick={() => setMenuOpen(false)}>Fitur & Layanan</Link>
+          </li>
+          <li>
+            <Link href="/harga" onClick={() => setMenuOpen(false)}>Harga</Link>
+          </li>
+          <li>
+            <Link href="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
+          </li>
+        </ul>
+      </div>
+      
     <section className={stylesx['container']}>
         <nav className={stylesx['second-nav']}>
             <div className={stylesx['navbar']}>
@@ -31,6 +72,8 @@ const Harga = () => {
             </div>
         </nav>
     </section>
+
+    
     <section className={stylesx['main']}>
         <div className={stylesx['head']}>
             <header>
@@ -66,16 +109,14 @@ const Harga = () => {
                             <h3>Paket Premium</h3>
                             <p><strong>Rp <span>1.000.000</span></strong>/bln</p>
                         </div>
-
-
-                         <button className={stylesx['btn']}>Berlangganan Sekarang</button>
+                            <button className={stylesx['btn']}>Berlangganan Sekarang</button>
                         </div>
                     </div>
                 </div>
                     <div className={stylesx['list-fitur']}>
                         <div className={stylesx['fitur-card']}>
                             <div className={stylesx['judul']}>
-                                <h1>Fitur</h1>
+                                <span>Fitur</span>
                             </div>
                         <div className={stylesx['fitur-content']}>
                             <ul>
@@ -89,7 +130,7 @@ const Harga = () => {
                     </div>
                     <div className={stylesx['fitur-card']}>
                         <div className={stylesx['judul']}>
-                            <h1>Fitur</h1>
+                            <span>Fitur</span>
                         </div>
                             <div className={stylesx['fitur-content']}>
                                <ul>
@@ -105,7 +146,7 @@ const Harga = () => {
                     </div>
                         <div className={stylesx['fitur-card']}>
                             <div className={stylesx['judul']}>
-                                <h1>Fitur</h1>
+                                <span>Fitur</span>
                             </div>
                             <div className={stylesx['fitur-content']}>
                                 <ul>

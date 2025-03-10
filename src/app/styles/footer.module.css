@@ -1,15 +1,20 @@
+.kuning {
+  background-color: var(--color1);
+  height: 5vh;
+}
+
+@media screen and (max-width: 786px) {
+
+}
+
 
 .footer-body{
     background-color: var(--color2);
-    height: 80vh;
+    height: 100vh;
     color: var(--color3);
   }
   
   .footer-body2 {
-    background-color: var(--color1);
-    height: 5vh;
-    position: absolute;
-    width: 100%;
     display: flex;
   }
   
@@ -22,7 +27,7 @@
   }
   
   .image-logo img{
-    width: 320px;
+    width: 310px;
     height: 120px;
     border-radius: 10px;
   }
@@ -87,24 +92,29 @@
     transform: scale(1.1);
     transition: all 0.3s ease;
   }
-  
+
+  .maps {
+    position: absolute;
+    width: 120%;
+    left: 100%;
+    transform: translateY(-70%);
+  }
+
+  .maps iframe {
+    border-radius: 5px;
+  } 
   
   .info-layan-bis-lain {
-    position: relative;
-    top: 100%;
     padding: 43px;
     display: flex;
-  }
-  
-  .info-layan-bis-lain {
-    display: flex;
     flex-direction: column;
-    background-color: #49c5b6;
     padding: 20px;
     color: white;
     font-family: Arial, sans-serif;
   }
-  
+
+
+
   .top-sections {
     display: flex;
     justify-content: space-between;
@@ -133,16 +143,61 @@
   .list li {
     margin: 5px 0;
   }
+ 
   
-  .list a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-  }
+  @media screen and (max-width: 768px) {
+    .footer-body {
+      height: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    
+    .footer-body2 {
+      position: static;
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
   
-  .bottom-section {
-    margin-top: 20px;
+
+    .alamat-logo {
+      position: static;
+      width: 100%;
+      padding: 15px;
+      top: 0;
+    }
+  
+  
+    .maps {
+      position: static;
+      width: 60%;
+      left: 0;
+      transform: none;
+      margin: 15px 0;
+    }
+  
+
+    .info-layan-bis-lain {
+      position: static;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+  
+
+    .top-sections {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
+ 
+  /*   
   
   .menu-footer {
     position: absolute;
@@ -167,12 +222,4 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .maps {
-    position: absolute;
-    left: 30%;
-    transform: translateY(140%);
-  }
-
-  .maps iframe {
-    border-radius: 11px;
-  }
+*/

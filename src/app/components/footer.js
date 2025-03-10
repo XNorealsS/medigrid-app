@@ -6,14 +6,16 @@ import stylesx from "../styles/footer.module.css";
 
 function footer() {
   return (
-    <footer className={stylesx['footer-body']}>
+    <footer id='footer' className={stylesx['footer-body']}>
+        <div className={stylesx['kuning']}></div>
         <div className={stylesx['footer-body2']}>
             <div className={stylesx['alamat-logo']}>
                 <div className={stylesx['image-logo']}>
                     <Image src="/img/medigrid.jpg" alt="Logo" width={100} height={100}></Image>
                     <p>MediGrid menyatukan semua aspek operasional klinik dalam satu platform. Aplikasi ini memberikan nyaman dan efisien MediGrid memprioritaskan keamanan data pasien</p>
-
                 </div>
+
+
                 <div className={stylesx['media-sosial']}>
                     <div className={stylesx['header-medsos']}>
                         <h3>Media Sosial</h3>
@@ -33,19 +35,33 @@ function footer() {
                         </div>
                     </div>
                 </div>
+
                 <div className={stylesx['hubungi-kami']}>
                     <div className={stylesx['hubungi']}>
                         <h3>Hubungi Kami</h3>
                     </div>
-                    <div className={stylesx['kami']}>
-                        <Link href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m19.23 15.26l-2.54-.29a1.99 1.99 0 0 0-1.64.57l-1.84 1.84a15.05 15.05 0 0 1-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52a2 2 0 0 0-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07c.53 8.54 7.36 15.36 15.89 15.89c1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98"/></svg>
-                        +62 822 4141 4171</Link>
-                        <Link href=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-.4 4.25l-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44"/></svg>marketing@medigrid.id</Link>
-                       
-                    </div>
+                        <div className={stylesx['kami']}>
+                            <Link href="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m19.23 15.26l-2.54-.29a1.99 1.99 0 0 0-1.64.57l-1.84 1.84a15.05 15.05 0 0 1-6.59-6.59l1.85-1.85c.43-.43.64-1.03.57-1.64l-.29-2.52a2 2 0 0 0-1.99-1.77H5.03c-1.13 0-2.07.94-2 2.07c.53 8.54 7.36 15.36 15.89 15.89c1.13.07 2.07-.87 2.07-2v-1.73c.01-1.01-.75-1.86-1.76-1.98"/></svg>
+                            +62 822 4141 4171</Link>
+                            <Link href=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m-.4 4.25l-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25a.85.85 0 1 1 .9-1.44L12 11l6.7-4.19a.85.85 0 1 1 .9 1.44"/></svg>marketing@medigrid.id</Link>
                         </div>
                     </div>
+                    <div className={stylesx['maps']}>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.038787499462!2d95.32758637503258!3d5.561269694419209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3040373fcb6725bd%3A0xe612b746e161a427!2sJl.%20Syiah%20Kuala%20No.10d%2C%20Bandar%20Baru%2C%20Kec.%20Kuta%20Alam%2C%20Kota%20Banda%20Aceh%2C%20Aceh%2023125!5e0!3m2!1sid!2sid!4v1740309282658!5m2!1sid!2sid"
+                        width="140%"
+                        height="200"
+                        style={{ border: 0 }}
+                        allowFullScreen // Perbaikan untuk React
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                    <p>Jl. Syiah Kuala No.10D, Bandar Baru, Kec. Kuta Alam, Kota Banda Aceh, Aceh 23125</p>
+                    </div>
+                </div>
+
+
                     <div className={stylesx['info-layan-bis-lain']}>
                         <div className={stylesx['top-sections']}>
                             <div className={stylesx['info-section']}>
@@ -87,23 +103,6 @@ function footer() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={stylesx['menu-footer']}>
-                        <div className={stylesx['list-menu']}>
-                        
-                        </div>
-                    </div>
-                    <div className={stylesx['maps']}>
-                    <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.038787499462!2d95.32758637503258!3d5.561269694419209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3040373fcb6725bd%3A0xe612b746e161a427!2sJl.%20Syiah%20Kuala%20No.10d%2C%20Bandar%20Baru%2C%20Kec.%20Kuta%20Alam%2C%20Kota%20Banda%20Aceh%2C%20Aceh%2023125!5e0!3m2!1sid!2sid!4v1740309282658!5m2!1sid!2sid"
-                    width="140%"
-                    height="200"
-                    style={{ border: 0 }}
-                    allowFullScreen // Perbaikan untuk React
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                        <p>Jl. Syiah Kuala No.10D, Bandar Baru, Kec. Kuta Alam, Kota Banda Aceh, Aceh 23125</p>
                     </div>
             </div>
     </footer>  

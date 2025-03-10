@@ -1,48 +1,55 @@
-"use client";
-import React, { useEffect, useState } from "react";
+// app/blog/page.js
 import Image from "next/image";
 import Link from "next/link";
-import stylesh from '../styles/blog.module.css';
+import Head from "next/head";
 import Footer from "../components/footer";
-import AOS from 'aos';
-import "aos/dist/aos.css"
+import stylesh from "../styles/blog.module.css";
 
+// Optional: Menggunakan Metadata API Next.js 13
+export const metadata = {
+  title: "Blog - Nama Website",
+  description:
+    "Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini.",
+  openGraph: {
+    title: "Blog - Nama Website",
+    description:
+      "Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini.",
+    images: ["/img/medigrid.jpg"],
+    url: "https://yourwebsite.com/blog",
+  },
+};
 
-const Blog = () => {
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default async function Blog() {
+  // Fetch data pada server (SSG/ISR)
+  const res = await fetch("http://localhost:5000/api/news", {
+    next: { revalidate: 10 },
+  });
+  const data = await res.json();
 
-
-  // Fetch berita dari backend
-  useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/news");
-        const data = await response.json();
-
-        // Sesuaikan URL gambar
-        const updatedNews = data.map((item) => ({
-          ...item,
-          image_url: item.image_url
-            ? item.image_url.includes("http")
-              ? item.image_url
-              : `http://localhost:5000${item.image_url}`
-            : "/img/bakc.jpg",
-        }));
-
-        setNews(updatedNews);
-      } catch (error) {
-        console.error("Gagal mengambil berita:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchNews();
-  }, []);
+  // Update URL gambar sesuai kebutuhan
+  const news = data.map((item) => ({
+    ...item,
+    image_url: item.image_url
+      ? item.image_url.includes("http")
+        ? item.image_url
+        : `http://localhost:5000${item.image_url}`
+      : "/img/bakc.jpg",
+  }));
 
   return (
     <>
+      {/* SEO Meta Tags & Structured Data */}
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            name: "Blog - Nama Website",
+            url: "https://yourwebsite.com/blog",
+          })}
+        </script>
+      </Head>
+
       <nav className={stylesh["first-nav"]}>
         <div className={stylesh["bahasa-faq"]}>
           <p>IND <span></span></p>
@@ -79,55 +86,55 @@ const Blog = () => {
           <h1>BLOG</h1>
           <p>
             <span className={stylesh["gradi"]}>
-              Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi layanan dan fasilitas kesehatan terkini
-            </span> yang kami sediakan untuk Anda
+              Dapatkan berita terbaru seputar kesehatan, tips medis, serta informasi
+              layanan dan fasilitas kesehatan terkini
+            </span>{" "}
+            yang kami sediakan untuk Anda.
           </p>
         </div>
 
-        {loading ? (
+        {/* Tampilan Berita */}
+        {news.length === 0 ? (
           <p>Memuat berita...</p>
         ) : (
-          // Menggunakan grid layout agar card memiliki ukuran konsisten
-<div className={stylesh["blog-grid"]}>
-  {news.map((item) => (
-    <div key={item.id} className={stylesh["card1"]}>
-      <div className={stylesh["card-image"]}>
-        <Image
-          src={item.image_url}
-          alt={item.title}
-          width={400}
-          height={200}
-        />
-      </div>
-      <div className={stylesh["card-body"]}>
-        <h6>
-          <span>{item.author || "Admin"}</span>
-          <span>{new Date(item.created_at).toLocaleDateString("id-ID")}</span>
-        </h6>
-        <h5 className={stylesh["card-title"]}>{item.title}</h5>
-        <p className={stylesh["card-text"]}>
-          {item.subtitle ? item.subtitle : item.content.substring(0, 100) + "..."}
-        </p>
-        <Link href={`/blog/${item.id}`} className={stylesh["baca"]}>Baca Selengkapnya</Link>
-      </div>
-    </div>
-  ))}
-</div>
-
+          <div className={stylesh["blog-grid"]}>
+            {news.map((item) => (
+              <div key={item.id} className={stylesh["card1"]}>
+                <div className={stylesh["card-image"]}>
+                  <Image
+                    src={item.image_url}
+                    alt={item.title}
+                    width={400}
+                    height={200}
+                    loading="lazy"
+                  />
+                </div>
+                <div className={stylesh["card-body"]}>
+                  <h6>
+                    <span>{item.author || "Admin"}</span>
+                    <span>
+                      {new Date(item.created_at).toLocaleDateString("id-ID")}
+                    </span>
+                  </h6>
+                  <h5 className={stylesh["card-title"]}>{item.title}</h5>
+                  <p className={stylesh["card-text"]}>
+                    {item.subtitle
+                      ? item.subtitle
+                      : item.content.substring(0, 100) + "..."}
+                  </p>
+                  <Link href={`/blog/${item.id}`} className={stylesh["baca"]}>
+                    Baca Selengkapnya
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         )}
 
-        <div className={stylesh["button"]}>
-          <button className={stylesh["btn"]}>Prev</button>
-          <button className={stylesh["btn"]}>1</button>
-          <button className={stylesh["btn"]}>2</button>
-          <button className={stylesh["btn"]}>....</button>
-          <button className={stylesh["btn"]}>Next</button>
-        </div>
+
       </section>
 
       <Footer />
     </>
   );
-};
-
-export default Blog;
+}

@@ -288,28 +288,28 @@ export default function Dashboard() {
 
 
             {activeTab === "forms" && (
-              <div className="space-y-6">
-                {/* Create news form */}
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h2 className="text-xl font-semibold text-secondary mb-6">Create New News</h2>
-                  <NewsForm onSubmit={handleSubmit} />
-                </div>
+  <div className="space-y-6">
+    {/* Create news form */}
+    <div className="bg-white p-6 rounded-lg shadow-sm">
+      <h2 className="text-xl font-semibold text-secondary mb-6">Create New News</h2>
+      <NewsForm onSuccess={fetchNews} />
+    </div>
 
-                {/* News list */}
-                <div className="mt-8">
-                  <h2 className="text-xl font-semibold text-secondary mb-4">News Articles</h2>
-                  <NewsList newsList={newsList} onEdit={handleEdit} onDelete={handleDelete} />
-                </div>
+    {/* News list */}
+    <div className="mt-8">
+      <h2 className="text-xl font-semibold text-secondary mb-4">News Articles</h2>
+      <NewsList newsList={newsList} onEdit={handleEdit} onDelete={handleDelete} />
+    </div>
 
-                {/* Edit dialog */}
-                <EditNewsDialog
-                  isOpen={isEditDialogOpen}
-                  onClose={() => setIsEditDialogOpen(false)}
-                  news={editingNews}
-                  onSubmit={handleEditSubmit}
-                />
-              </div>
-            )}
+    {/* Edit dialog */}
+    <EditNewsDialog
+      isOpen={isEditDialogOpen}
+      onClose={() => setIsEditDialogOpen(false)}
+      news={editingNews}
+      onSubmit={handleEditSubmit}
+    />
+  </div>
+)}
 
             {activeTab === "data" && (
               <div className="bg-white shadow-sm rounded-lg p-6">

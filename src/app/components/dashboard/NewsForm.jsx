@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FiUpload } from "react-icons/fi";
 
-const NewsForm = ({ onSubmit, initialData = {}, isEdit = false }) => {
+const NewsForm = ({ onSuccess, initialData = {}, isEdit = false }) => {
   const [formData, setFormData] = useState({
     title: initialData.title || "",
     subtitle: initialData.subtitle || "",
@@ -12,6 +12,11 @@ const NewsForm = ({ onSubmit, initialData = {}, isEdit = false }) => {
     status: null,
   });
   const [preview, setPreview] = useState(initialData.image_url || null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
+  
+  // Get backend URL from environment or use default
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5000";
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -26,13 +31,74 @@ const NewsForm = ({ onSubmit, initialData = {}, isEdit = false }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    setIsSubmitting(true);
+    setMessage("");
+
+    try {
+      const data = new FormData();
+      
+      // Add all form data to FormData object
+      Object.keys(formData).forEach((key) => {
+        if (formData[key] !== null) {
+          data.append(key, formData[key]);
+        }
+      });
+
+      // Log what's being sent (for debugging)
+      for (let [key, value] of data.entries()) {
+        console.log(`${key}:`, value);
+      }
+
+      // Determine URL and method based on whether we're editing or creating
+      const url = isEdit 
+        ? `${backendUrl}/api/news/${initialData.id}` 
+        : `${backendUrl}/api/news`;
+      
+      const method = isEdit ? "PUT" : "POST";
+
+      const res = await fetch(url, {
+        method: method,
+        body: data,
+      });
+      
+      const result = await res.json();
+      
+      if (result.success) {
+        setMessage("Success! " + (isEdit ? "News updated." : "News created."));
+        // Clear form if it's a new submission
+        if (!isEdit) {
+          setFormData({
+            title: "",
+            subtitle: "",
+            content: "",
+            image: null,
+            status: null,
+          });
+          setPreview(null);
+        }
+        // Notify parent component of success (optional)
+        if (onSuccess) onSuccess();
+      } else {
+        setMessage("Error: " + (result.error || "Unknown error occurred"));
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setMessage("Error submitting form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {message && (
+        <div className={`p-3 rounded-md ${message.includes("Error") ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700"}`}>
+          {message}
+        </div>
+      )}
+      
       {preview && (
         <div className="relative h-40 w-full rounded-md border">
           <Image src={preview} alt="Preview" fill className="rounded-md object-cover" />
@@ -93,8 +159,9 @@ const NewsForm = ({ onSubmit, initialData = {}, isEdit = false }) => {
       <button
         type="submit"
         className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark"
+        disabled={isSubmitting}
       >
-        {isEdit ? "Update News" : "Create News"}
+        {isSubmitting ? "Processing..." : (isEdit ? "Update News" : "Create News")}
       </button>
     </form>
   );

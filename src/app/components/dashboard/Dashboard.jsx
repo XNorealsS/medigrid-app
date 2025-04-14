@@ -76,7 +76,10 @@ export default function Dashboard() {
           data.append(key, formData[key]);
         }
       });
-      console.log(data);
+      for (let [key, value] of data.entries()) {
+        console.log(`${key}:`, value);
+      }
+      
 
       const res = await fetch(`${backendUrl}/api/news`, {
         method: "POST",

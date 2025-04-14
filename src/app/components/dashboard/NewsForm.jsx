@@ -9,6 +9,7 @@ const NewsForm = ({ onSubmit, initialData = {}, isEdit = false }) => {
     subtitle: initialData.subtitle || "",
     content: initialData.content || "",
     image: null,
+    status: null,
   });
   const [preview, setPreview] = useState(initialData.image_url || null);
 

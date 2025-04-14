@@ -33,9 +33,9 @@ export default function Dashboard() {
     setMobileMenuOpen(false);
   };
 
-  useEffect(() => {
-    if (status === "authenticated") fetchNews();
-  }, [status]);
+  // useEffect(() => {
+  //   if (status === "authenticated") fetchNews();
+  // }, [status]);
 
   const fetchNews = async () => {
     setIsLoading(true);
@@ -70,11 +70,13 @@ export default function Dashboard() {
   const handleSubmit = async (formData) => {
     try {
       const data = new FormData();
+      
       Object.keys(formData).forEach((key) => {
         if (formData[key] !== null) {
           data.append(key, formData[key]);
         }
       });
+      console.log(data);
 
       const res = await fetch(`${backendUrl}/api/news`, {
         method: "POST",
@@ -82,6 +84,8 @@ export default function Dashboard() {
       });
       
       const result = await res.json();
+      console.log(result);
+      
 
       if (result.success) {
         setMessage("News created successfully!");
@@ -163,18 +167,18 @@ export default function Dashboard() {
   }
 
   // Redirect if not authenticated
-  if (status !== "authenticated") {
-    return (
-      <div className="min-h-screen bg-light flex items-center justify-center">
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <p className="text-center text-dark">You need to be logged in to access this page.</p>
-          <Link href="/login" className="block mt-4 text-center text-primary hover:underline">
-            Go to Login
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  // if (status !== "authenticated") {
+  //   return (
+  //     <div className="min-h-screen bg-light flex items-center justify-center">
+  //       <div className="p-6 bg-white rounded-lg shadow-md">
+  //         <p className="text-center text-dark">You need to be logged in to access this page.</p>
+  //         <Link href="/login" className="block mt-4 text-center text-primary hover:underline">
+  //           Go to Login
+  //         </Link>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="flex min-h-screen bg-light">
@@ -239,7 +243,7 @@ export default function Dashboard() {
           <div className="flex items-center space-x-4">
             <Image src="/img/medigrid.jpg" alt="Logo" width={40} height={40} className="rounded-full" />
             <span className="text-lg font-semibold text-secondary">
-              Welcome, {session.user.name}
+              {/* Welcome, {session.user.name} */}
             </span>
           </div>
           <button
